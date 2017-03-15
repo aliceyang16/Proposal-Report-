@@ -75,6 +75,15 @@
 	geodesic distances between datapoints \cite{Zhang2012}. This means that the geodesic distance between $x_i$ and $x_j$ imitates as much of the Euclidean between the low-dimensional representation yi and yj as possible. The low-dimensional representation $y_i$ and $y_j$ are computed using the classical scaling technique, which results in a pairwise geodesic distance matrix. The drawback of the Isomap technique is that it constructs erroneous connections in the neighbourhood graph, G which can affect the performance of the Isomap.
 	
 	\subsubsection{Kernel PCA}
+	Kernel Principal Component Analysis (KPCA) is a technique that makes use kernel functions to map data into high dimensional space, by which the space is manipulated using linear PCA \cite{Cui2012}. KPCA makes use of a mapping function by which it computes the kernel matrix $K$ of datapoints $x_i$ and $x_j$. The enteries for the kernel matrix is defined by Equation [].
+	\begin{equation}
+		k_{ij} = K(x_i, x_j)
+	\end{equation}
+	where
+	\begin{align*}
+		K &= \text{kernel function}\\
+		x_i \text{ and } x_j &= \text{input datapoints}
+	\end{align*}
 	
 	Similar to PCA, Independent Component Analysis (ICA) is a technique which analyses data of multidimensional high order. It identifies the independent implicit information in order to remove redundant as well as extract independent information \cite{7852869}.
 	
