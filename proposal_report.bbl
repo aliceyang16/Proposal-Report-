@@ -1,0 +1,123 @@
+\begin{thebibliography}{10}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\url}[1]{{\tt #1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{Ramesh2004}
+A.~N. Ramesh, C.~Kambhampati, J.~R.~T. Monson, and P.~J. Drew.
+\newblock \enquote{{Artificial intelligence in medicine}.}
+\newblock {\em Annals of the Royal College of Surgeons of England\/}, vol.~86,
+  no.~5, pp. 334--338, 2004.
+
+\bibitem{Mahendran2011}
+S.~K. Mahendran and S.~S. Baboo.
+\newblock \enquote{{Automatic Fracture Detection Using Classifiers- A Review}.}
+\newblock vol.~8, no.~6, pp. 340--345, 2011.
+
+\bibitem{Center2002}
+I.~K.~F. Center, A.~Scienti, and L.~L. N. L. P.~O. Box.
+\newblock \enquote{{A survey of dimension reduction techniques}.}
+\newblock {\em Computing\/}, , no.~1, pp. 1--18, 2002.
+
+\bibitem{Boyd2010}
+S.~Boyd and L.~Vandenberghe.
+\newblock {\em {Convex Optimization}\/}, vol.~25.
+\newblock 2010.
+
+\bibitem{Jolliffe2016}
+I.~T. Jolliffe, J.~Cadima, and J.~Cadima.
+\newblock \enquote{{Principal component analysis : a review and recent
+  developments Subject Areas : Author for correspondence :}.}
+\newblock 2016.
+
+\bibitem{van2009dimensionality}
+L.~Van Der~Maaten, E.~Postma, and J.~Van~den Herik.
+\newblock \enquote{Dimensionality reduction: a comparative.}
+\newblock {\em J Mach Learn Res\/}, vol.~10, pp. 66--71, 2009.
+
+\bibitem{Zhang2012}
+Z.~Zhang, S.~Member, T.~W.~S. Chow, and S.~Member.
+\newblock \enquote{{M-Isomap : Orthogonal Constrained Marginal Isomap for
+  Nonlinear Dimensionality Reduction}.}
+\newblock pp. 1--12, 2012.
+
+\bibitem{7852869}
+Q.~Cai and X.~Tang.
+\newblock \enquote{A digital audio watermarking algorithm based on independent
+  component analysis.}
+\newblock In {\em 2016 9th International Congress on Image and Signal
+  Processing, BioMedical Engineering and Informatics (CISP-BMEI)\/}, pp.
+  1053--1058. Oct 2016.
+
+\bibitem{KPCA_2016}
+D.~Kapsoulis, K.~Tsiakas, V.~Asouti, and K.~Giannakoglou.
+\newblock \enquote{The use of Kernel PCA in evolutionary optimization for
+  computationally demanding engineering applications.}
+\newblock In {\em 2016 IEEE Symposium Series on Computational Intelligence
+  (SSCI)\/}, pp. 1--8. Dec 2016.
+
+\bibitem{LDA_2016}
+E.~I.~G. Nassara, E.~Grall-Maës, and M.~Kharouf.
+\newblock \enquote{Linear Discriminant Analysis for Large-Scale Data:
+  Application on Text and Image Data.}
+\newblock In {\em 2016 15th IEEE International Conference on Machine Learning
+  and Applications (ICMLA)\/}, pp. 961--964. Dec 2016.
+
+\bibitem{Rebentrost2014}
+P.~Rebentrost, M.~Mohseni, and S.~Lloyd.
+\newblock \enquote{{Quantum support vector machine for big data
+  classification}.}
+\newblock {\em Physical Review Letters\/}, vol. 113, no.~3, pp. 1--5, 2014.
+
+\bibitem{saha_classifying_2016}
+S.~Saha, A.~Mahmud, A.~A. Ali, and M.~A. Amin.
+\newblock \enquote{Classifying digital X-ray images into different human body
+  parts.}
+\newblock In {\em 2016 5th International Conference on Informatics, Electronics
+  and Vision ({ICIEV})\/}, pp. 67--71.
+
+\bibitem{jyothi_congenital_2016}
+S.~Jyothi and K.~Vanisree.
+\newblock \enquote{Congenital Heart Septum Defect Diagnosis on Chest X-Ray
+  Features Using Neural Networks.}
+\newblock In {\em 2016 Second International Conference on Computational
+  Intelligence Communication Technology ({CICT})\/}, pp. 265--269.
+
+\bibitem{multiple_classification}
+N.~Umadevi and S.~N. Geethalakshmi.
+\newblock \enquote{Multiple classification system for fracture detection in
+  human bone x-ray images.}
+\newblock In {\em 2012 Third International Conference on Computing
+  Communication Networking Technologies ({ICCCNT})\/}, pp. 1--8.
+
+\bibitem{LeCun2015}
+Y.~LeCun, Y.~Bengio, and G.~Hinton.
+\newblock \enquote{{Deep learning}.}
+\newblock {\em Nature\/}, vol. 521, no. 7553, pp. 436--444, 2015.
+
+\bibitem{intrator_feature_1992}
+N.~Intrator.
+\newblock \enquote{Feature Extraction Using an Unsupervised Neural Network.}
+\newblock vol.~4, no.~1, pp. 98--107.
+
+\bibitem{neagoe_new_2014}
+V.~E. Neagoe and R.~M. Stoica.
+\newblock \enquote{A new neural network-based approach for automatic annotation
+  of remote sensing imagery.}
+\newblock In {\em 2014 {IEEE} Geoscience and Remote Sensing Symposium\/}, pp.
+  1781--1784.
+
+\bibitem{kottaimalai_eeg_2013}
+R.~Kottaimalai, M.~P. Rajasekaran, V.~Selvam, and B.~Kannapiran.
+\newblock \enquote{{EEG} signal classification using Principal Component
+  Analysis with Neural Network in Brain Computer Interface applications.}
+\newblock In {\em 2013 {IEEE} International Conference {ON} Emerging Trends in
+  Computing, Communication and Nanotechnology ({ICECCN})\/}, pp. 227--231.
+
+\bibitem{meyer_physicians_2013}
+A.~N.~D. Meyer, V.~L. Payne, D.~W. Meeks, R.~Rao, and H.~Singh.
+\newblock \enquote{Physicians’ Diagnostic Accuracy, Confidence, and Resource
+  Requests: A Vignette Study.}
+\newblock vol. 173, no.~21, pp. 1952--1958.
+
+\end{thebibliography}
