@@ -75,15 +75,32 @@
 	geodesic distances between datapoints \cite{Zhang2012}. This means that the geodesic distance between $x_i$ and $x_j$ imitates as much of the Euclidean between the low-dimensional representation yi and yj as possible. The low-dimensional representation $y_i$ and $y_j$ are computed using the classical scaling technique, which results in a pairwise geodesic distance matrix. The drawback of the Isomap technique is that it constructs erroneous connections in the neighbourhood graph, G which can affect the performance of the Isomap.
 	
 	\subsubsection{Kernel PCA}
-	Kernel Principal Component Analysis (KPCA) is a technique that makes use kernel functions to map data into high dimensional space, by which the space is manipulated using linear PCA \cite{Cui2012}. KPCA makes use of a mapping function by which it computes the kernel matrix $K$ of datapoints $x_i$ and $x_j$. The enteries for the kernel matrix is defined by Equation [].
+	Kernel Principal Component Analysis (KPCA) is a technique that makes use kernel functions to map data into high dimensional space, by which the space is manipulated using linear PCA \cite{Cui2012}. KPCA makes use of a mapping function by which it computes the kernel matrix $K$ of datapoints $x_i$ and $x_j$. The enteries for the kernel matrix is defined by Equation \ref{eq: kernel matrix enteries}.
 	\begin{equation}
 		k_{ij} = K(x_i, x_j)
+		\label{eq: kernel matrix enteries}
 	\end{equation}
 	where
 	\begin{align*}
 		K &= \text{kernel function}\\
 		x_i \text{ and } x_j &= \text{input datapoints}
 	\end{align*}
+	The features defined by the kernel function have a zero-mean. Additionally, the eigenvectors of the covariance matrix $\textbf{a}_i$ which is expressed in Equation \ref{eq: kernel covariance matrix} can be computed, since the eigenvectors of the kernel matrix are related.
+	\begin{equation}
+		\textbf{a}_i = \frac{1}{\sqrt{\lambda_i}} \textbf{v}_i
+		\label{eq: kernel covariance matrix}
+	\end{equation}
+	The low-dimensional representation is obtained by the projection given by Equation \ref{eq: kernel low-dimensional}.
+	\begin{equation}
+		\textbf{y}_i = \left\{ \sum_{j = 1}^{n}a_1^{(1)}K(\textbf{X}_j, \textbf{X}_i), ... , \sum_{j = 1}^{n}a_d^{(j)}K(\textbf{X}_j, \textbf{X}_i) \right\}
+		\label{eq: kernel low-dimensional}
+	\end{equation}
+	where
+	\begin{align*}
+		a_1^{(j)} &= \text{jth value in vector }\textbf{a}_1\\
+		K &= \text{kernel function}
+	\end{align*}
+	A disadvantage with KPCA is that the size of the kernel matrix is proportional square number of instances in the dataset. However despite the obvious disadvantages, KPCA is applied to facial recognition, speech recognition and novelty detection \cite{van2009dimensionality}.
 	
 	Similar to PCA, Independent Component Analysis (ICA) is a technique which analyses data of multidimensional high order. It identifies the independent implicit information in order to remove redundant as well as extract independent information \cite{7852869}.
 	
