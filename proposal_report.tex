@@ -102,7 +102,22 @@
 	\end{align*}
 	A disadvantage with KPCA is that the size of the kernel matrix is proportional square number of instances in the dataset. However despite the obvious disadvantages, KPCA is applied to facial recognition, speech recognition and novelty detection \cite{van2009dimensionality}.
 	
-	Similar to PCA, Independent Component Analysis (ICA) is a technique which analyses data of multidimensional high order. It identifies the independent implicit information in order to remove redundant as well as extract independent information \cite{7852869}.
+	\subsubsection{MVU}
+	Maximum Variance Unfolding (MVU) is a technique that aims to preserve as much of the distances and angles between nearby points by studying the kernel matrix. As result it forms a neighbourhood graph, $G$ \cite{Jiang2011}. A quadratic equation is formulated for the "unfolding" transformation. The "unfolding" transformation is where MVU maximizes the sum of the squared Euclidean distances between all the datapoints whilst preserving the distances within neighbouring points. This can be described in Equation \ref{eq: optimization problem}.
+	\begin{equation}
+		\text{Maximize } \sum_{ij}||\textbf{y}_i - \textbf{y}_j||^{2}
+		\label{eq: optimization problem}
+	\end{equation}
+	\begin{align*}
+		\text{Subject to:}
+		\begin{cases}
+			(1)||\textbf{y}_i - \textbf{y}_j||^{2} = ||\textbf{x}_i - \textbf{x}_j||^{2} , \eta_{ij} = 1 \\
+			(2)\sum_{i}\textbf{y}_i = 0
+		\end{cases}
+	\end{align*}
+	MVU reformulates the optimization as semidefinite programming 
+	
+	Similar to PCA, Independent Component Analysis (ICA) is a technique which analyses data of multidimensional high order. It identifies the independent implicit information in order to remove redundant as well as extract independent information \cite{7852869}. 
 	
 	Kernel Principal Component Analysis (KPCA) is again similar to the regular PCA, however the difference lies in its application in which KPCA is applied in a none-linear manner. As a result, it creates a none-linear mapping scheme to maximize the variance within the considered data \cite{KPCA_2016}.
 	
