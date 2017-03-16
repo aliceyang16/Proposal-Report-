@@ -115,7 +115,17 @@
 			(2)\sum_{i}\textbf{y}_i = 0
 		\end{cases}
 	\end{align*}
-	MVU reformulates the optimization as semidefinite programming 
+	MVU reformulates the optimization as semidefinite programming (SDP) over matrix $\textbf{K}$ by defining the inner product of $\textbf{K}_{ij} = \textbf{y}_i \cdot \textbf{y}_j$. Thus the SDP can be written as follows: 
+	\newline
+	Maximize trace(\textbf{K}) subjected to:
+	\begin{equation}
+		\begin{cases}
+			(1) \textbf{K} \geq 0 \\
+			(2) \sum_{ij} \textbf{K}_{ij} = 0 \\
+			(3) \textbf{K}_{ii} - 2\textbf{K}_{ij} + \textbf{K}_{jj} = ||\textbf{x}_i - \textbf{x}_j||^{2}, \eta_{ij} = 1
+		\end{cases}
+	\end{equation} 
+	From the first condition $\textbf{K} \geq 0$, it indicates that matrix $\textbf{K}$ is required to be positive semi-definite, since SDP is convex.
 	
 	Similar to PCA, Independent Component Analysis (ICA) is a technique which analyses data of multidimensional high order. It identifies the independent implicit information in order to remove redundant as well as extract independent information \cite{7852869}. 
 	
