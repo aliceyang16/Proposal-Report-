@@ -207,9 +207,19 @@
 		\caption{Block Diagram illustrating an overview of the system with image pre-processing }
 		\label{fig:system overview_2}
 	\end{figure}
-	The performance for both the systems are compared to the performance of a single step neural network. The performance is evaluated by accuracy of detection, error rate, and execution speed.
+	\newline
+	The performance for both the systems are compared to the performance of a single step neural network. The performances are evaluated by accuracy of detection, error rate, and execution speed. The idea behind comparing the systems is to determine whether there are underlining features in the medical x-ray images that simplifies the training process for the neural network as well as obtaining accurate results in minimal time.
 	
-	\subsection{Feature Selection}
+	\subsection{Dimensionality Reduction}
+	The input for the two-step system are two dimensional (2D) images. The structure of the 2D x-ray images is a linear structure. By definition a linear structure is a sequence of data elements, which only one data element is directly evaluated at a time. Therefore the chosen dimensionality reduction technique is Principal Component Analysis (PCA). 
+	With this approach, each pixel in the image is evaluated. The size of the images are $ 809 \times 899$ pixels.
+	
+	The selected features illustrated in Table \ref{feature_selection} have differing dimensions. The dimensions of the contour feature can vary depending on the type bone presented in the x-ray image. Therefore there is a high dimensionality in the dataset that represents one x-ray image. Although there is enough information from the selected features to represent an x-ray image, there is also redundant information present in the dataset. The automated decision making process has the ability to process the raw data, however in doing so it will hinder its overall performance. The PCA and ICA techniques are under consideration for the dimensionality reduction technique. Therefore it is subjected to change. 
+	
+	\subsection{Artificial Neural Network}
+	The automation of bone fracture detection can be done by utilizing a neural network technique. The implementation of the neural network technique consists of two stages. The first stage is the training of the technique and the second is the classification of the bone fracture. The neural network technique has the ability to process the raw data from the selected features, however since the raw data has high dimensionality it has the potential to hinder the performance of both stages in the neural network technique. This will be observed during execution. The neural network technique in consideration is Back Propagation Neural Network, however this choice of technique is subjected to change.
+	
+	\subsection{Image Pre-Processing}
 	Feature selection is performed through the process of image processing, whereby the Canny and Sobel techniques are utilized. The features selected are shown in Table \ref{feature_selection}.
 	
 	\begin{table}[!h]
@@ -231,12 +241,6 @@
 			\hline
 		\end{tabular}
 	\end{table}
-	
-	\subsection{Dimensionality Reduction}
-	The selected features illustrated in Table \ref{feature_selection} have differing dimensions. The dimensions of the contour feature can vary depending on the type bone presented in the x-ray image. Therefore there is a high dimensionality in the dataset that represents one x-ray image. Although there is enough information from the selected features to represent an x-ray image, there is also redundant information present in the dataset. The automated decision making process has the ability to process the raw data, however in doing so it will hinder its overall performance. The PCA and ICA techniques are under consideration for the dimensionality reduction technique. Therefore it is subjected to change. 
-	
-	\subsection{Automated Decision Making Techniques}
-	The automation of bone fracture detection can be done by utilizing a neural network technique. The implementation of the neural network technique consists of two stages. The first stage is the training of the technique and the second is the classification of the bone fracture. The neural network technique has the ability to process the raw data from the selected features, however since the raw data has high dimensionality it has the potential to hinder the performance of both stages in the neural network technique. This will be observed during execution. The neural network technique in consideration is Back Propagation Neural Network, however this choice of technique is subjected to change.
 	
 	\section{Time Management}
 	Table \ref{time_management} presents the time management for the proposed research presented. 
