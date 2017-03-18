@@ -286,12 +286,41 @@
 	\subsection{Dimensionality Reduction}
 	For investigation purposes, dimensionality reduction is applied to both data structures to test the performance of the different data structures as well as determining whether there is a defining feature from the x-ray images to determine the presence of a bone fracture.
 	
-	The first data structure for one image has a 3D structure, $1200 \times 900 \times 26$. Since there are 26 resulting images from one original x-ray image, the dimensionality reduction technique chosen is Principal Component Analysis (PCA) since this is linearly structured whereby only one data element is accessed as a time. PCA is applied to determine which of the 26 images holds crucial information for the detection of bone fracture, whilst at the same time mapping the data to a lower-dimension. The first step to mapping the data into a lower-dimension is adopting the PCA compression method, whereby all 26 images are compressed. The initial step is to determine the covariance matrix for each image. The covariance matrix is then used to determine the principal components. The number of principal components is proportional to the number of variables, $p$ within an image. The resultant principal components, $Z_p$ are computed by determining the eigenvalues of the covariance matrix. The covariance matrix is in a symmetrical form. The eigenvalues found in the covariance matrix are the variances of the principal components. Since the number of principal component are proportional to the number of variables within an image, this means that there are $p$ eigenvalues. All eigenvalues, $\lambda$ are greater than or equal to zero. The largest eigenvalue corresponds to the first principal component. This applies to the next eigenvalue, until the i-th principal component. Therefore $\lambda_i$ corresponds to the i-th eigenvector. Thus the PCA steps applied to each image are as follows: 
-		
-	The input for the two-step system are two dimensional (2D) images. The structure of the 2D x-ray images is a linear structure. By definition a linear structure is a sequence of data elements, which only one data element is directly evaluated at a time. Therefore the chosen dimensionality reduction technique is Principal Component Analysis (PCA). 
-	With this approach, each pixel in the image is evaluated. The size of the images are $ 809 \times 899$ pixels. The objective of the dimensionality reduction technique is to reduce the dimensions of the x-ray image by mapping it onto a lower dimension. The mapping is done by determining as much variation within the data as possible.
+	The first data structure for one image has a 3D structure, $1200 \times 900 \times 26$. Since there are 26 resulting images from one original x-ray image, the dimensionality reduction technique chosen is Principal Component Analysis (PCA) since this is linearly structured whereby only one data element is accessed as a time. 
 	
-	The selected features illustrated in Table \ref{feature_selection} have differing dimensions. The dimensions of the contour feature can vary depending on the type bone presented in the x-ray image. Therefore there is a high dimensionality in the dataset that represents one x-ray image. Although there is enough information from the selected features to represent an x-ray image, there is also redundant information present in the dataset. The automated decision making process has the ability to process the raw data, however in doing so it will hinder its overall performance. The PCA and ICA techniques are under consideration for the dimensionality reduction technique. Therefore it is subjected to change. 
+	The first step is to determine the covariance matrix for original x-ray image. The covariance matrix is then used to determine the principal components. The number of principal components is proportional to the number of variables, $n$ within an image. The resultant principal components, $P_n$ are computed by determining the eigenvalues of the covariance matrix. The covariance matrix is in a symmetrical form. The eigenvalues found in the covariance matrix are the variances of the principal components. Since the number of principal component are proportional to the number of variables within an image, this means that there are $n$ eigenvalues. All eigenvalues, $\lambda$ are greater than or equal to zero. The largest eigenvalue corresponds to the first principal component. This applies to the next eigenvalue, until the i-th principal component. Therefore $\lambda_i$ corresponds to the i-th eigenvector.
+	
+	\subsubsection{Step 1:} The first step is to determine the covariance matrix for each original x-ray image, which has a three dimensional structure. Let the three dimensions be represented by $x$, $y$ and $z$. Thus the covariance matrix, $C$ can be expressed in Equation \ref{eq: covariance matrix}.
+	\begin{equation}
+		\label{eq: covariance matrix}
+		C = 
+		\begin{bmatrix}
+			cov(x,x) & cov(x,y) & cov(x,z) \\
+			cov(y,x) & cov(y,y) & cov(y,z) \\
+			cov(z,x) & cov(z,y) & cov(z,z) \\
+		\end{bmatrix}
+	\end{equation}
+	
+	The result of $cov(x,x)$, $cov(y,y)$ and $cov(z,z)$ are eigenvalues of matrix $C$ which are the variances of the principal component.
+	
+	\subsubsection{Step 2:} The eigenvectors $v_1, v_2, v_3, ... , v_i$ corresponding to the eigenvalues $\lambda_1, \lambda_2, \lambda_3, ... , \lambda_i$ are calculated. Assuming that the eigenvalues are in descending order such that: $\lambda_1 \geq \lambda_2 \geq \lambda_3, \geq, ...,\geq \lambda_i$, then $\lambda_1$ is the first principal component and $v_1$ consists of the main characteristics for the given data.
+	
+	\subsubsection{Step 3:} The principal components that expresses the 26 images can be expressed as follows:
+	\begin{equation}
+		P_i = \lambda_{i1}Z_1 + \lambda_{i2}Z_2 + ... + \lambda_{in}Z_n
+	\end{equation} 
+	where $Z_n$ represents the 26 various images of the original x-ray image. 
+	
+	\subsubsection{Step 4:}
+	The low-dimension matrix is constructed by selecting the principal components that consists of the most variations of the data. Therefore the result mapping covariance matrix can be expressed as follows: 
+	\begin{equation}
+		M = [\lambda v_1, \lambda v_2, ... , \lambda v_n]
+	\end{equation} 
+	
+	\subsubsection{Step 5:} The low-dimension matrix is then constructed as follows:
+	\begin{equation}
+		Y = M^T \times \text{Original Data}
+	\end{equation}
 	
 	\subsection{Artificial Neural Network}
 	The automation of bone fracture detection can be done by utilizing a neural network technique. The implementation of the neural network technique consists of two stages. The first stage is the training of the technique and the second is the classification of the bone fracture. The neural network technique has the ability to process the raw data from the selected features, however since the raw data has high dimensionality it has the potential to hinder the performance of both stages in the neural network technique. This will be observed during execution. The neural network technique in consideration is Back Propagation Neural Network, however this choice of technique is subjected to change.
