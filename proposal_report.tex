@@ -192,13 +192,7 @@
 	There are existing pattern recognition techniques available which have the ability to detect the presence of bone fracture. However, there are large amounts of datasets that is passed into the techniques. These datasets create dimensionality, the more datasets there are the higher the number of dimensionality there are. High number of dimensionalities affects the performance of the techniques. This is known as the curse of dimensionality. 
 	
 	\section{Proposed Methodology}
-	The objective of this research is to propose a system which consists of two steps in order to determine the presence of a fracture within medical x-ray images. The first step is dimensionality reduction and the second step is the automation of the decision making process using neural networks. The dimensionality reduction step is intended to map the data from a high dimensionality to a low dimensionality without loosing any critical information needed for the input to the neural network. The system overview is illustrated in Figure \ref{fig:system overview}.
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[scale=0.23]{system_overview.png}
-		\caption{Block Diagram illustrating an overview of the two-step system }
-		\label{fig:system overview}
-	\end{figure}
+	The objective of this research is to propose a system which consists of two steps in order to determine the presence of a fracture within medical x-ray images. The first step is dimensionality reduction and the second step is the automation of the decision making process using neural networks. The dimensionality reduction step is intended to map the data from a high dimensionality to a low dimensionality without loosing any critical information needed for the input into the neural network. The system overview is illustrated in Figure \ref{fig:system overview_2}.
 	\newline
 	In addition, to developing the two-step system an image pre-processing technique is introduced to the system. This can be seen in Figure \ref{fig:system overview_2}.
 	\begin{figure}[!h]
@@ -208,39 +202,99 @@
 		\label{fig:system overview_2}
 	\end{figure}
 	\newline
-	The performance for both the systems are compared to the performance of a single step neural network. The performances are evaluated by accuracy of detection, error rate, and execution speed. The idea behind comparing the systems is to determine whether there are underlining features in the medical x-ray images that simplifies the training process for the neural network as well as obtaining accurate results in minimal time.
+	The performance for the system is compared to the performance of a single step neural network. The performances are evaluated by accuracy of detection, error rate, and execution speed. The idea behind comparing the systems is to determine whether there are underlining features in the medical x-ray images that simplifies the training process for the neural network as well as obtaining accurate results in minimal time.
+	
+	\subsection{Image Pre-Processing}
+	The medical image is pre-precessed to de-noise and sharpen the image. The image pre-processing system makes use of both sobel and canny techniques. The system produces a total of 26 images highlighting the defining features in the x-ray image in various ways. The types of images produced are listed in Table \ref{tb: image table} along with the dimensions of each image.
+	
+	\begin{table}[!h]
+		\centering
+		\caption{Table showing the types of images produced by image pre-processing system along with the dimensions of each image}
+		\label{tb: image table}
+		\begin{tabular}{| l | c |}
+			\hline
+			Image (jpg file) & Dimensions (pixels) \\
+			\hline \hline
+			equalised &  \\
+			gamma\_corrected &  \\
+			denoised & \\
+			sharpened & \\
+			hist1 & \\
+			hist2 & \\
+			bitnot & \\
+			bitor & \\
+			blur & \\
+			a\_contour & \\
+			binary\_high & \\
+			binary\_inverse & $809 \times 899$ \\
+			binary\_low & \\
+			canny\_contours\_after\_joining & \\
+			canny\_contours\_after\_removing & \\
+			i\_cannyx3 & \\
+			sobel\_dire & \\
+			sobel\_value & \\
+			u\_hough & \\
+			v\_hough & \\
+			w\_hough & \\
+			\hline
+			binary\_gray & \\
+			circle & \\
+			circle\_contours & $1200 \times 900$ \\
+			gray & \\
+			sobel & \\
+			\hline
+		\end{tabular}
+	\end{table}
+	Furthermore the image pre-processing system produces csv files for gradients, lines and contours for the i\_cannyx3.jpg image. The dimensions of each extracted feature is shown Table \ref{feature_selection}.
+	
+	\begin{table}[!h]
+		\centering
+		\caption{Table showing dimensions of the extracted features from i\_cannyx3.jpg image, where $N_g$ is the total number of values for gradient, $N_l$ is the total number of values for lines and $N_c$ is the total number of values for contours.}
+		\label{feature_selection}
+		\begin{tabular}{|l|p{2cm}|l|}
+			\hline
+			Features & Dimensions & Description \\
+			\hline \hline
+			gradient & $2 \times N_g $ & hough line value, \\
+			& & angle (in degrees)\\
+			\hline
+			lines    & $4 \times N_l $ & $x_{1}$, $y_{1}$ \\
+			& & $x_{2}$, $y_{2}$ \\
+			\hline
+			contours & $2 \times N_c $  & $x$ and $y$ values \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\subsection{Data Structure}
+	The data produced by the image pre-processing system can be structured in two various ways. The first structure consists of making use of all the images produced. This creates a three dimensional (3D) structure for one image. The structure can be represented by $1200 \times 900 \times 26$. A graphical representation of the structure can be seen in Figure \ref{fig: first_structure}.
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.23]{first_structure.png}
+		\caption{Data structure using all 26 images produced by the image pre-processing systems}
+		\label{fig: first_structure}
+	\end{figure}
+	
+	The second structure is constructed from the three extracted features from the i\_crannyx3.jpg, which are gradient, lines and contours. A simplified graphical representation of the structure is shown in Figure \ref{fig: second_structure}. 
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.23]{second_structure.png}
+		\caption{Simplified data structure using the three extracted features from i\_cannyx3.jpg}
+		\label{fig: second_structure}
+	\end{figure}
 	
 	\subsection{Dimensionality Reduction}
+	For investigation purposes, dimensionality reduction is applied to both data structures to test the performance of the different data structures as well as determining whether there is a defining feature from the x-ray images to determine the presence of a bone fracture.
+	
+	The first data structure for one image has a 3D structure, $1200 \times 900 \times 26$. Since there are 26 resulting images from one original x-ray image, the dimensionality reduction technique chosen is Principal Component Analysis (PCA) since this is linearly structured whereby only one data element is accessed as a time. PCA is applied to determine which of the 26 images holds crucial information for the detection of bone fracture, whilst at the same time mapping the data to a lower-dimension. The first step to mapping the data into a lower-dimension is adopting the PCA compression method, whereby all 26 images are compressed. The initial step is to determine the covariance matrix for each image. The covariance matrix is then used to determine the principal components. The number of principal components is proportional to the number of variables, $p$ within an image. The resultant principal components, $Z_p$ are computed by determining the eigenvalues of the covariance matrix. The covariance matrix is in a symmetrical form. The eigenvalues found in the covariance matrix are the variances of the principal components. Since the number of principal component are proportional to the number of variables within an image, this means that there are $p$ eigenvalues. All eigenvalues, $\lambda$ are greater than or equal to zero. The largest eigenvalue corresponds to the first principal component. This applies to the next eigenvalue, until the i-th principal component. Therefore $\lambda_i$ corresponds to the i-th eigenvector. Thus the PCA steps applied to each image are as follows: 
+		
 	The input for the two-step system are two dimensional (2D) images. The structure of the 2D x-ray images is a linear structure. By definition a linear structure is a sequence of data elements, which only one data element is directly evaluated at a time. Therefore the chosen dimensionality reduction technique is Principal Component Analysis (PCA). 
-	With this approach, each pixel in the image is evaluated. The size of the images are $ 809 \times 899$ pixels.
+	With this approach, each pixel in the image is evaluated. The size of the images are $ 809 \times 899$ pixels. The objective of the dimensionality reduction technique is to reduce the dimensions of the x-ray image by mapping it onto a lower dimension. The mapping is done by determining as much variation within the data as possible.
 	
 	The selected features illustrated in Table \ref{feature_selection} have differing dimensions. The dimensions of the contour feature can vary depending on the type bone presented in the x-ray image. Therefore there is a high dimensionality in the dataset that represents one x-ray image. Although there is enough information from the selected features to represent an x-ray image, there is also redundant information present in the dataset. The automated decision making process has the ability to process the raw data, however in doing so it will hinder its overall performance. The PCA and ICA techniques are under consideration for the dimensionality reduction technique. Therefore it is subjected to change. 
 	
 	\subsection{Artificial Neural Network}
 	The automation of bone fracture detection can be done by utilizing a neural network technique. The implementation of the neural network technique consists of two stages. The first stage is the training of the technique and the second is the classification of the bone fracture. The neural network technique has the ability to process the raw data from the selected features, however since the raw data has high dimensionality it has the potential to hinder the performance of both stages in the neural network technique. This will be observed during execution. The neural network technique in consideration is Back Propagation Neural Network, however this choice of technique is subjected to change.
-	
-	\subsection{Image Pre-Processing}
-	Feature selection is performed through the process of image processing, whereby the Canny and Sobel techniques are utilized. The features selected are shown in Table \ref{feature_selection}.
-	
-	\begin{table}[!h]
-		\centering
-		\caption{Table showing the selected features and the dimensions of each feature.}
-		\label{feature_selection}
-		\begin{tabular}{|l|p{2cm}|l|}
-			\hline
-			Features & No. of Dimension & Description \\
-			\hline \hline
-			gradient & 2 & hough line value, \\
-			& & angle (in degrees)\\
-			\hline
-			lines    & 4 & $x_{1}$, $y_{1}$ \\
-			& & $x_{2}$, $y_{2}$ \\
-			\hline
-			contours & N  & line values that make \\
-			& & up the contour\\
-			\hline
-		\end{tabular}
-	\end{table}
 	
 	\section{Time Management}
 	Table \ref{time_management} presents the time management for the proposed research presented. 
