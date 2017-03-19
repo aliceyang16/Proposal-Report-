@@ -323,35 +323,136 @@
 	\end{equation}
 	
 	\subsection{Neural Network}
-	An artificial neural network consists of three different layers: input layer, hidden layer and output layer. There are weighted connections which link the three layers together. The weights are factors which assist with the automated decision making process. The weights values are determined through a training process. The chosen neural network training method is back-propagation.  
+	An artificial neural network consists of three different layers: input layer, hidden layer and output layer. There are weighted connections which link the three layers together. The chosen neural network consists of one hidden layer for simplicity purposes. 
+	A graphical layout of the neural network is shown in Figure \ref{fig: neural_network}.
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.25]{neural_network.png}
+		\caption{Neural Network Layout showing the input, hidden and output layers}
+		\label{fig: neural_network}
+	\end{figure}
 	
-	The automation of bone fracture detection can be done by utilizing a neural network technique. The implementation of the neural network technique consists of two stages. The first stage is the training of the technique and the second is the classification of the bone fracture. The neural network technique has the ability to process the raw data from the selected features, however since the raw data has high dimensionality it has the potential to hinder the performance of both stages in the neural network technique. This will be observed during execution. The neural network technique in consideration is Back Propagation Neural Network, however this choice of technique is subjected to change.
+	The weights are factors which assist with the automated decision making process. The weights values are determined through a training process. The chosen neural network training method is back-propagation. The training process makes use of the resultant matrices from the dimensionality reduction technique. The operations for training the neural network is described below:
 	
-	\section{Time Management}
+	\subsubsection{Step 1:} 
+	The first step is to initialize the weights in which each weight can be randomly assigned a value (representing the weight), since it will be corrected at a later stage.
+	
+	\subsubsection{Step 2:}
+	The inputs and the desired outputs are defined. The inputs are the matrices obtained from the dimensionality reduction technique, whilst the outputs are the desired outcome result for corresponding input matrices.
+	
+	\subsubsection{Step 3:}
+	The net input into each node, $net_{h_k}$ in the hidden layer is computed as follows for $i = \left\{1, 2, ..., n\right\}$ and $k = \left\{1, 2, ..., k\right\}$:
+	\begin{equation}
+		net_{h_k} = \sum_{i = 0}^{n} w_{ik}x_i 
+	\end{equation}
+	
+	\subsubsection{Step 4:}
+	The output for each node in the hidden layer is calculated by applying the logistic function. The calculation for the first node, $h_1$ is performed as follows:
+	\begin{equation}
+		Out_{h_k} = \frac{1}{1 + e^{-net_{h_k}}}
+	\end{equation}
+	
+	\subsubsection{Step 5:}
+	The net input and output for the nodes at the output layer is computed in the same manner as shown in Step 3 and 4, which given as for $j = \left\{1, 2, ..., k\right\}$ and $m = \left\{1, 2\right\}$:
+	\begin{equation}
+		net_{y_m} = \sum_{j = 0}^{k} w_{jm}h_j
+	\end{equation}
+	\begin{equation}
+		Out_{y_m} = \frac{1}{1 + e^{-net_{y_m}}}
+	\end{equation}
+	The output of the nodes, $Out_{y_m}$ are crucial for the next step. 
+	
+	\subsubsection{Step 6:}
+	The objective of back-propagation is to update each weight within the network such that the computed output is as close to the target as possible. This is done by first calculating the total error between the actual output and the target. The total error is computed as follows:
+	\begin{equation}
+		E_{total} = \sum \frac{1}{2} (target - output)^2
+	\end{equation}
+	
+	\subsubsection{Step 7:}
+	The total error is used to adjust the weights within the neural network. This adjustment is performed over $t$ iterations such that the total error is at its minimal. The error minimal value can be a predefined threshold value. The adjustments of the weights are expressed as follows:
+	\begin{equation}
+		w_{im}(t) = w_{im}(t-1)+\eta\delta_i(t)y_m(t)
+	\end{equation}
+	where:
+	\begin{align*}
+		& \delta_i(t) = 
+		\begin{cases}
+			y_m(t)(1 - y_m(t))\times e_m(t) & m \text{ } \epsilon \text{ output layer}\\
+			y_m(t)(1 - y_m(t)) & \text{if not}
+		\end{cases} \\
+		& 0 < \eta < 1 \\
+		& \eta = \text{learning rate} \\
+		& e_m(t) = \text{error at node m for t iteration}
+	\end{align*}
+	
+	\subsection{Investigations}
+	The performance of the two-step system and the single step system are compared. The performance of both systems are measured by execution speed, accuracy and error rate. The measurement of the execution speed includes the recording of the training speed for the neural network. For the two step system, the data used for training the neural network is the resultant matrices from the dimensionality reduction technique. For the single step system, the original x-ray images are used to train the neural network. 
+	
+	For further investigation, for the two-step system dimensionality reduction can be performed on the extracted data features: gradient, lines and contours for all 26 images. The resultant matrices from the dimensionality technique can be used to train the neural network. The idea behind using gradients, lines and contours is to avoid analysing the pixels within each image, since the number of pixels is much greater than the number of points given by the three extracted features. The investigation will determine whether using the extracted features are more accurate and less time consuming than using pixels of an image for the detection of a bone fracture.
+	
+	\section{Time Management and Milestones}
+	Table \ref{time_management} and Table \ref{tb: image table} illustrate the tasks that need to completed in order to obtain the results for the research.
 	Table \ref{time_management} presents the time management for the proposed research presented. 
 	\begin{table}[!h]
 		\centering
 		\caption{Table showing the time management of the implementation of a bone fracture detection two step system.}
 		\label{time_management}
-		\begin{tabular}{|l|p{5cm}|}
+		\begin{tabular}{| c | p{2.5cm} | p{4.5cm} |}
 			\hline
-			Date & Task \\
+			& Period & Task Description \\
 			\hline \hline
-			1 March & 1st Draft Hand-In \\
+			1 & Jan 11 - Apr 10 2017 & Work on Research Proposal for submission\\
 			\hline
-			2 March & Investigate best suited dimensionality reduction technique for selected features \\
+			2 & Apr 11 - Jul 10 2017 & Develop system for image enhancement and feature extraction for x-ray images \\
 			\hline
-			8 March & Present 1st iteration of source code for the two step system \\
+			3 & Jul 11 - Oct 10 2017 &  Develop the system for dimensionality reduction. This includes testing the system\\
 			\hline
-			15 March & Present 2nd iteration with automated decision making process implemented \\
+			4 & Oct 11 - Jan 10 2018 & Develop neural network along with training algorithm for the detection of bone fracture \\
 			\hline
-			22 March & Submit Proposal \\
+			5 & Jan 11 - Apr 10 2018 & Work on first transaction paper \\
+			\hline
+			6 & Apr 11 - Jul 10 2018 & Integration of both dimensionality reduction model and the neural network model \\
+			\hline
+			7 & Jul 11 - Oct 10 2018 & Work on second transaction paper\\
+			\hline
+			8 & Oct 11 - Jan 10 2019 & Work on Dissertation \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\newpage
+	
+	\begin{table}[!h]
+		\centering
+		\caption{Table showing the milestones that need to be achieved in order to complete the research}
+		\label{tb: milestones}
+		\begin{tabular}{| c | l | p{5cm} |}
+			\hline 
+			& Date & Task \\
+			\hline \hline
+			1 & Apr 10 2017 & Submit research proposal for approval\\
+			\hline
+			2 & Jul 10 2017 & Complete development of image enhancement and feature extraction system \\
+			\hline
+			3 & Oct 10 2017 & Complete development of the dimensionality reduction model \\
+			\hline
+			4 & Jan 10 2018 & Complete development of neural network model \\
+			\hline
+			5 & Apr 10 & Submit first transaction paper \\
+			\hline
+			6 & Jul 10 2018 & All models fully integrated \\
+			\hline
+			7 & Aug 10 2018 & All results for research is obtained \\
+			\hline
+			8 & Oct 10 2018 & Submit second transaction paper \\
+			\hline
+			9 & Jan 10 2019 & Submit dissertation for approval \\
 			\hline
 		\end{tabular}
 	\end{table}
 	
 	\section{Conclusion}
-	To conclude, the system proposed for the detection of bone fracture consists of two steps. The first step is dimensionality reduction and the second step is the automation of decision making. The objective of implementing a dimensionality reduction process is to improve the performance of the automated bone fracture detection. The performance is measured by speed, classification accuracy and error rate. 
+	To conclude, the system proposed for the detection of bone fracture consists of two steps. The first step is dimensionality reduction and the second step is the automation based on a neural network model. The objective of implementing a dimensionality reduction process is to improve the performance of the automated bone fracture detection. The performance is measured by both execution speed and training speed, accuracy and error rate. 
 	
 	\newpage
 	\bibliographystyle{witseie}
