@@ -18,7 +18,7 @@
 	
 	\author{Alice Yang (597609) \thanks{School of Electrical and Information Engineering, University of the Witwatersrand, Private Bag 3, 2050, Johannesburg, South Africa} }
 	
-	\abstract{The objective of this paper is to propose a two-step system for the detection of bone fractures in order to investigate the performance of the system compared to a single step system. The performance are defined by the speed of its execution, classification accuracy and error rate. The two-step system consists of a dimensionality reduction and a automated decision making process. The objective of the introduction of the dimensionality reduction process is to improve the performance of the automated decision making process during the training and decision making sessions. }
+	\abstract{This paper proposes a two-step system for the detection of bone fractures in order to investigate the performance of the system compared to a single step system. The performance are defined by the speed of its execution, classification accuracy and error rate. The two-step system consists of a dimensionality reduction and a automated decision making process. The objective of the introduction of the dimensionality reduction process is to improve the performance of the automated decision making process during the training and decision making sessions. }
 	
 	\keywords{Dimensionality Reduction, Neural Networks, Supervised Learning,  Unsupervied Learning, Bone Fractures, Medical Images}
 	\maketitle
@@ -438,7 +438,38 @@
 	\end{itemize}
 
 	\subsubsection{Maximum Variance Unfolding}
-	
+	The MVU technique compresses the data by preserving the distances and the angles between the data points \cite{Shao2009}. 
+	\begin{itemize}
+		\item Step 1: Determine the smallest $k$ integer to construct the k-nearest graph that generates connected training samples, $\textbf{x}_1, . . . ,\textbf{x}_n$ \\
+		\item Step 2: Using training samples, construct an $N \times N$ binary adjacency graph \textbf{S}. \\
+		\item Step 3: Equation \ref{eq: MVU S setting} determines the values of $\textbf{S}_{ij}$.
+		\begin{equation}
+			\label{eq: MVU S setting}
+			\textbf{S}_{ij} = 
+			\begin{cases}
+				1 & \text{if } \textbf{x}_i \text{ is k-nearest neighbour} \\
+				0 & \text{otherwise}
+			\end{cases}
+		\end{equation}
+		\item Step 3: Training the kernel matrix, $K$ by solving Equation \ref{eq: MVU kernel matrix}.
+		\newline
+		Maximize trace(\textbf{K}) subject to:
+		\begin{equation}
+			\label{eq: MVU kernel matrix}
+			\begin{cases}
+				(1) &\textbf{K} \geq 0 \\
+				(2) &\sum_{ij}\textbf{k}_{ij} = 0 \\
+				(3) &\textbf{K}_{ii} - \textbf{2K}_{ij} + \textbf{K}_{jj} = ||\textbf{x}_i - \textbf{x}_j||^2
+			\end{cases}
+		\end{equation}
+		\item Step 4: Eigen-decomposition for $\textbf{K}$ is performed and the reduce dimension is set to the intrinsic dimension, $d$ which is determined by the eigenvalues of $\textbf{K}$.\\
+		\item Step 5: The d-dimensional MVU is computed, which embeds the training samples, $\textbf{y}_1, . . . , \textbf{y}_N$. The training samples can re-written and it is expressed in Equation \ref{eq: MVU training samples}.
+		\begin{equation}
+			\label{eq: MVU training samples}
+			\textbf{y}_i = [\sqrt{\lambda_1}\alpha_1^1, . . . ,\sqrt{\lambda_d}\alpha_i^d]^T
+		\end{equation}
+		\item Step 6: A basis linear vector projection is trained such that it approximates the mapping between the input vector, $\text{x}_i$ to the output vector, $\textbf{y}_i$ by linear regression.
+	\end{itemize}
 	
 	\subsection{Neural Network}
 	An artificial neural network consists of three different layers: input layer, hidden layer and output layer. There are weighted connections which link the three layers together. The chosen neural network consists of one hidden layer for simplicity purposes. 
@@ -513,7 +544,7 @@
 	Table \ref{time_management} and Table \ref{tb: image table} illustrate the tasks that need to completed in order to obtain the results for the research.
 	\begin{table}[!h]
 		\centering
-		\caption{Table showing the time management of the implementation of a bone fracture detection two step system.}
+		\caption{Table showing the time management for conducting the proposed research.}
 		\label{time_management}
 		\begin{tabular}{| c | p{2.5cm} | p{4.5cm} |}
 			\hline
@@ -538,11 +569,9 @@
 		\end{tabular}
 	\end{table}
 	
-	\newpage
-	
 	\begin{table}[!h]
 		\centering
-		\caption{Table showing the milestones that need to be achieved in order to complete the research}
+		\caption{Table showing the milestones that need to be achieved for the research}
 		\label{tb: milestones}
 		\begin{tabular}{| c | l | p{5cm} |}
 			\hline 
