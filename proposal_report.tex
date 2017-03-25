@@ -391,8 +391,54 @@
 			\label{eq: KPCA eigenvalues eigenvector rewritten}
 			V_k = \sum_{i=1}^{N}a_{aki}\phi(x_i)
 		\end{equation} \\
-		\item
+		\item Step 3: Equation \ref{eq: KPCA substitution} is the result of substituting $V_kin$ from Equation \ref{eq: KPCA eigenvalues eigenvectors} into Equation \ref{eq: KPCA eigenvalues eigenvector rewritten}.
+		\begin{equation}
+			\label{eq: KPCA substitution}
+			\frac{1}{N}\sum_{i=1}^{N}\phi(x_i)\phi(x_i)^T \sum_{j=1}^{N}a_{kj}\phi(x_j) = \lambda_{k}\sum_{j=1}^{N}a_{ki}\phi(x_i)
+		\end{equation} \\
+		\item Step 4: A kernel function is defined. Let the kernel function be defined by Equation \ref{eq: KPCA kernel function}.
+		\begin{equation}
+			\label{eq: KPCA kernel function}
+			k(x_i, x_j) = \phi(x_i)^T\phi(x_j)
+		\end{equation}\\
+		\item Step 5: Equation \ref{eq: KPCA multiplied} is obtained by multiplying $\phi(x_l)^T$ to both sides of Equation \ref{eq: KPCA substitution}
 	\end{itemize}
+	\begin{equation}
+	\label{eq: KPCA multiplied}
+	\frac{1}{N}\sum_{i=1}^{N}(x_l, x_i)\sum_{j=1}^{N}a_{kj}k(x_i, x_j) = \lambda_k\sum_{i=1}^{N}a_{ki}k(x_l, x_i)
+	\end{equation}
+	\begin{itemize}
+		\item Step 6:The notion matrix is expressed in Equation \ref{eq: KPCA notion matrix}.
+		\begin{equation}
+			\label{eq: KPCA notion matrix}
+			K^2a_k = \lambda N K_{a_k} 
+		\end{equation}
+		where 
+		\begin{equation}
+			K_{i,j} = k(x_i, x_j)
+		\end{equation}
+		and $a_k$ is the Nth-dimensional vector of $a_{aki}$
+		\begin{equation}
+			a_{K} = [a_{ak1}a_{ake} . . . akN]^T
+		\end{equation}
+		in which $a_k$ can be solved using the following:
+		\begin{equation}
+			\label{eq: KPCA Kak}
+			Ka_k = \lambda N a_k
+		\end{equation} 
+		\item Step 7: $\phi(x_i)$ does not always have zero-mean in the original space and it cannot be guaranteed that it is centred in the altered space. Therefore it can be used to created the Gram Matrix, $K'$ which can substitute the kernel matrix, $K$. The Gram matrix ensures that $\phi(x_i)$ is centred in the altered space. The Gram matrix is given by Equation \ref{eq: KPCA Gram Matrix}.
+		\begin{equation}
+			\label{eq: KPCA Gram Matrix}
+			K' = K - 1_N K - 1K1_N + 1_NK1_N
+		\end{equation}
+		where $1_N = N \times N$ matrix in which all elements of the matrix is equal to $\frac{1}{N}$.\\
+		\item Step 8: Dimensionality reduction is performed by constructing the kernel matrix from $K$ in Equation \ref{eq: KPCA notion matrix}. \\
+		\item Step 9: The Gram Matrix is computed using Equation \ref{eq: KPCA Gram Matrix}. \\
+		\item Step 10: Equation \ref{eq: KPCA Kak} is used to computed the Kernel principal components.
+	\end{itemize}
+
+	\subsubsection{Maximum Variance Unfolding}
+	
 	
 	\subsection{Neural Network}
 	An artificial neural network consists of three different layers: input layer, hidden layer and output layer. There are weighted connections which link the three layers together. The chosen neural network consists of one hidden layer for simplicity purposes. 
