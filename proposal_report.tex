@@ -246,62 +246,61 @@
 	
 	\section{Proposed Methodology}
 	\label{sc: Proposed Methodology}
-	The objective of this research is to propose a system which consists of two steps in order to determine the presence of a fracture within medical x-ray images. The first step is dimensionality reduction and the second step is the automation of the decision making process using neural networks. The dimensionality reduction step is intended to map the data from a high dimensionality to a low dimensionality without loosing any critical information needed for the input into the neural network. The system overview is illustrated in Figure \ref{fig:system overview_2}.
-	\newline
-	In addition, to developing the two-step system an image pre-processing technique is introduced to the system. This can be seen in Figure \ref{fig:system overview_2}.
+	This section describes the methodology to conduct the research for determining the optimal dimensionality reduction technique. The dimensionality reduction technique is used in a two-step system for detecting bone fractures from medical x-ray images.
+	The dimensionality reduction technique is implemented as the first step of the system, whilst the second step is a neural network component to automate decision making. The dimensionality reduction step is intended to compress the raw image data by mapping the data from a high dimensionality to a low dimensionality whilst highlighting the crucial information for training the neural network. An image pre-processing module is implemented within the two-step system to process the raw image data before it is compressed for the neural network. An overview of the system is illustrated in Figure \ref{fig:system overview}.
+	\vspace{-3mm}
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.23]{system_overview_2.png}
 		\caption{Block Diagram illustrating an overview of the system with image pre-processing }
-		\label{fig:system overview_2}
+		\label{fig:system overview}
 	\end{figure}
-	\newline
-	The performance for the system is compared to the performance of a single step neural network. The performances are evaluated by accuracy of detection, error rate, and execution speed. The idea behind comparing the systems is to determine whether there are underlining features in the medical x-ray images that simplifies the training process for the neural network as well as obtaining accurate results in minimal time.
+	
+	To determine the optimal dimensionality reduction technique, each technique is implemented into the two-step system. The performance of the system for each technique is recorded and compared to one another. The performance is evaluated based on detection accuracy, execution time, and error rate. The ideal outcome is defined by high accuracy, minimal execution time and error rate.
 	
 	\subsection{Image Pre-Processing}
-	The medical image is pre-precessed to de-noise and sharpen the image. The image pre-processing system makes use of both sobel and canny techniques. The system produces a total of 26 images highlighting the defining features in the x-ray image in various ways. The types of images produced are listed in Table \ref{tb: image table} along with the dimensions of each image.
-	
+	The medical image is pre-precessed to eliminate noise and sharpen the image. The image pre-processing system makes use of both sobel and canny techniques. The module produces a total of 26 images from the original x-ray image highlighting the defining features in the x-ray image in various ways. The resulting images produced are listed in Table \ref{tb: image table} along with the pixel size of each image.
+	\vspace{-3mm}
 	\begin{table}[!h]
 		\centering
-		\caption{Table showing the types of images produced by image pre-processing system along with the dimensions of each image}
+		\caption{Table showing the resultant images produced by image pre-processing module along with the pixel size of each image}
 		\label{tb: image table}
-		\begin{tabular}{| p{4cm} | c |}
+		\begin{tabular}{| p{5.5cm} | c |}
 			\hline
-			Image (jpg file) & Dimensions (pixels) \\
+			Image (jpg file) & Pixel Size \\
 			\hline \hline
-			$\cdot$ equalised &  \\
-			$\cdot$ gamma\_corrected &  \\
-			$\cdot$ denoised & \\
-			$\cdot$ sharpened & \\
-			$\cdot$ hist1 & \\
-			$\cdot$ hist2 & \\
-			$\cdot$ bitnot & \\
-			$\cdot$ bitor & \\
-			$\cdot$ blur & \\
-			$\cdot$ a\_contour & \\
-			$\cdot$ binary\_high & \\
-			$\cdot$ binary\_inverse & $809 \times 899$ \\
-			$\cdot$ binary\_low & \\
-			$\cdot$ canny\_contours\_after - & \\
-			\_joining & \\
-			$\cdot$ canny\_contours\_after - & \\
-			\_removing & \\
-			$\cdot$ i\_cannyx3 & \\
-			$\cdot$ sobel\_dire & \\
-			$\cdot$ sobel\_value & \\
-			$\cdot$ u\_hough & \\
-			$\cdot$ v\_hough & \\
-			$\cdot$ w\_hough & \\
+			equalised &  \\
+			gamma\_corrected &  \\
+			denoised & \\
+			sharpened & \\
+			hist1 & \\
+			hist2 & \\
+			bitnot & \\
+			bitor & \\
+			blur & \\
+			a\_contour & \\
+			binary\_high & \\
+			binary\_inverse & $809 \times 899$ \\
+			binary\_low & \\
+			canny\_contours\_after\_joining & \\
+			canny\_contours\_after\_removing & \\
+			i\_cannyx3 & \\
+			sobel\_dire & \\
+			sobel\_value & \\
+			u\_hough & \\
+			v\_hough & \\
+			w\_hough & \\
 			\hline
-			$\cdot$ binary\_gray & \\
-			$\cdot$ circle & \\
-			$\cdot$ circle\_contours & $1200 \times 900$ \\
-			$\cdot$ gray & \\
-			$\cdot$ sobel & \\
+			binary\_gray & \\
+			circle & \\
+			circle\_contours & $1200 \times 900$ \\
+			gray & \\
+			sobel & \\
 			\hline
 		\end{tabular}
 	\end{table}
-	Furthermore the image pre-processing system produces csv files for gradients, lines and contours for the i\_cannyx3.jpg image. The dimensions of each extracted feature is shown Table \ref{feature_selection}.
+
+	Furthermore the image pre-processing module produces csv files for gradients, lines and contours for the i\_cannyx3.jpg image. The dimensions of each extracted feature is shown Table \ref{feature_selection}.
 	
 	\begin{table}[!h]
 		\centering
@@ -323,60 +322,77 @@
 	\end{table}
 	
 	\subsection{Data Structure}
-	The data produced by the image pre-processing system can be structured in two various ways. The first structure consists of making use of all the images produced. This creates a three dimensional (3D) structure for one image. The structure can be represented by $1200 \times 900 \times 26$. A graphical representation of the structure can be seen in Figure \ref{fig: first_structure}.
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[scale=0.23]{first_structure.png}
-		\caption{Data structure using all 26 images produced by the image pre-processing systems}
-		\label{fig: first_structure}
-	\end{figure}
-	
-	The second structure is constructed from the three extracted features from the i\_crannyx3.jpg, which are gradient, lines and contours. A simplified graphical representation of the structure is shown in Figure \ref{fig: second_structure}. 
+	The data structure for one original x-ray image is constructed from the 26 resultant images from the image pre-processing module. Furthermore, the three extracted features namely, gradient, lines and contours are utilized for the construction. A simplified graphical representation for the structure of one image (out of the 26 images) is shown in Figure \ref{fig: second_structure}. Figure \ref{fig: data_structure} illustrates the data structure constructed with all 26 images along with the three extracted features.
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.23]{second_structure.png}
-		\caption{Simplified data structure using the three extracted features from i\_cannyx3.jpg}
+		\caption{Simplified data structure for one pre-processed image}
 		\label{fig: second_structure}
+	\end{figure}
+
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.23]{data_structure.png}
+		\caption{Data structure for all 26 pre-processed images to represent the original image}
+		\label{fig: data_structure}
 	\end{figure}
 	
 	\subsection{Dimensionality Reduction}
-	For investigation purposes, dimensionality reduction is applied to both data structures to test the performance of the different data structures as well as determining whether there is a defining feature from the x-ray images to determine the presence of a bone fracture.
+	\subsubsection{Principal Component Analysis}
+	The first step is to determine the covariance matrix for original x-ray data. The covariance matrix is then used to determine the principal components. The number of principal components is proportional to the number of variables, $n$ within that dataset. The resultant principal components, $P_n$ are computed by determining the eigenvalues of the covariance matrix. The covariance matrix is in a symmetrical form. The eigenvalues found in the covariance matrix are the variances of the principal components. Since the number of principal component are proportional to the number of variables within an image, this means that there are $n$ eigenvalues. All eigenvalues, $\lambda$ are greater than or equal to zero. The largest eigenvalue corresponds to the first principal component. This applies to the next eigenvalue, until the i-th principal component. Therefore $\lambda_i$ corresponds to the i-th eigenvector.
 	
-	The first data structure for one image has a 3D structure, $1200 \times 900 \times 26$. Since there are 26 resulting images from one original x-ray image, the dimensionality reduction technique chosen is Principal Component Analysis (PCA) since this is linearly structured whereby only one data element is accessed as a time. 
-	
-	The first step is to determine the covariance matrix for original x-ray image. The covariance matrix is then used to determine the principal components. The number of principal components is proportional to the number of variables, $n$ within an image. The resultant principal components, $P_n$ are computed by determining the eigenvalues of the covariance matrix. The covariance matrix is in a symmetrical form. The eigenvalues found in the covariance matrix are the variances of the principal components. Since the number of principal component are proportional to the number of variables within an image, this means that there are $n$ eigenvalues. All eigenvalues, $\lambda$ are greater than or equal to zero. The largest eigenvalue corresponds to the first principal component. This applies to the next eigenvalue, until the i-th principal component. Therefore $\lambda_i$ corresponds to the i-th eigenvector.
-	
-	\subsubsection{Step 1:} The first step is to determine the covariance matrix for each original x-ray image, which has a three dimensional structure. Let the three dimensions be represented by $x$, $y$ and $z$. Thus the covariance matrix, $C$ can be expressed in Equation \ref{eq: covariance matrix}.
-	\begin{equation}
+	\begin{itemize}
+		\item Step 1: The first step is to determine the covariance matrix for each original x-ray image, which has a three dimensional structure. Let the three dimensions be represented by $x$, $y$ and $z$. Thus the covariance matrix, $C$ can be expressed in Equation \ref{eq: covariance matrix}.
+		\begin{equation}
 		\label{eq: covariance matrix}
 		C = 
 		\begin{bmatrix}
-			cov(x,x) & cov(x,y) & cov(x,z) \\
-			cov(y,x) & cov(y,y) & cov(y,z) \\
-			cov(z,x) & cov(z,y) & cov(z,z) \\
+		cov(x,x) & cov(x,y) & cov(x,z) \\
+		cov(y,x) & cov(y,y) & cov(y,z) \\
+		cov(z,x) & cov(z,y) & cov(z,z) \\
 		\end{bmatrix}
-	\end{equation}
-	
-	The result of $cov(x,x)$, $cov(y,y)$ and $cov(z,z)$ are eigenvalues of matrix $C$ which are the variances of the principal component.
-	
-	\subsubsection{Step 2:} The eigenvectors $v_1, v_2, v_3, ... , v_i$ corresponding to the eigenvalues $\lambda_1, \lambda_2, \lambda_3, ... , \lambda_i$ are calculated. Assuming that the eigenvalues are in descending order such that: $\lambda_1 \geq \lambda_2 \geq \lambda_3, \geq, ...,\geq \lambda_i$, then $\lambda_1$ is the first principal component and $v_1$ consists of the main characteristics for the given data.
-	
-	\subsubsection{Step 3:} The principal components that expresses the 26 images can be expressed as follows:
-	\begin{equation}
+		\end{equation}
+		
+		The result of $cov(x,x)$, $cov(y,y)$ and $cov(z,z)$ are eigenvalues of matrix $C$ which are the variances of the principal component.\\
+		\item Step 2: The eigenvectors $v_1, v_2, v_3, ... , v_i$ corresponding to the eigenvalues $\lambda_1, \lambda_2, \lambda_3, ... , \lambda_i$ are calculated. Assuming that the eigenvalues are in descending order such that: $\lambda_1 \geq \lambda_2 \geq \lambda_3, \geq, ...,\geq \lambda_i$, then $\lambda_1$ is the first principal component and $v_1$ consists of the main characteristics for the given data. \\
+		\item Step 3: The principal components that expresses the 26 images can be expressed as follows:
+		\begin{equation}
 		P_i = \lambda_{i1}Z_1 + \lambda_{i2}Z_2 + ... + \lambda_{in}Z_n
-	\end{equation} 
-	where $Z_n$ represents the 26 various images of the original x-ray image. 
-	
-	\subsubsection{Step 4:}
-	The low-dimension matrix is constructed by selecting the principal components that consists of the most variations of the data. Therefore the result mapping covariance matrix can be expressed as follows: 
-	\begin{equation}
+		\end{equation} 
+		where $Z_n$ represents the 26 various images of the original x-ray image. \\
+		\item Step 4: The low-dimension matrix is constructed by selecting the principal components that consists of the most variations of the data. Therefore the result mapping covariance matrix can be expressed as follows: 
+		\begin{equation}
 		M = [\lambda v_1, \lambda v_2, ... , \lambda v_n]
-	\end{equation} 
-	
-	\subsubsection{Step 5:} The low-dimension matrix is then constructed as follows:
-	\begin{equation}
+		\end{equation} \\
+		\item Step 5: The low-dimension matrix is then constructed as follows:
+		\begin{equation}
 		Y = M^T \times \text{Original Data}
+		\end{equation}
+	\end{itemize}
+	
+	\subsubsection{Kernel Principal Component Analysis}
+	Kernel Principal Component Analysis (KPCA) is centred around Equation \ref{eq: KPCA centred equation} \cite{Ibrahim_Baharudin2016}.
+	\begin{equation}
+		\label{eq: KPCA centred equation}
+		\frac{1}{N}\sum_{i=1}^{N}\phi(x_i)=0
 	\end{equation}
+	\begin{itemize}
+		\item Step 1: The covariance matrix is determined by Equation \ref{eq: KPCA covariance}, in which it produces a $M \times M$ matrix, where $M$ is the size of the dimensionality.
+		\begin{equation}
+			\label{eq: KPCA covariance}
+			C = \frac{1}{N}\sum_{i=1}^{N}\phi(x_i)\phi(x_i)^T
+		\end{equation} \\
+		\item Step 2: The eigenvalues, $\lambda_k$ and eigenvectors, $V_k$ are determined using Equation \ref{eq: KPCA eigenvalues eigenvectors}, in which it can be re-written as Equation \ref{eq: KPCA eigenvalues eigenvector rewritten}.
+		\begin{equation}
+			\label{eq: KPCA eigenvalues eigenvectors}
+			\frac{1}{N}\sum_{i=1}^{N}\phi(x_i)\left\{\phi(x_i)^TV_k\right\} = \lambda_k V_k
+		\end{equation} 
+		\begin{equation}
+			\label{eq: KPCA eigenvalues eigenvector rewritten}
+			V_k = \sum_{i=1}^{N}a_{aki}\phi(x_i)
+		\end{equation} \\
+		\item
+	\end{itemize}
 	
 	\subsection{Neural Network}
 	An artificial neural network consists of three different layers: input layer, hidden layer and output layer. There are weighted connections which link the three layers together. The chosen neural network consists of one hidden layer for simplicity purposes. 
