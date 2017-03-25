@@ -213,6 +213,11 @@
 	\newline
 	This means that for every $t$ iteration, the error is calculated and the weights are re-adjusted such that the error is at a minimal. A pre-defined threshold can be used to determine the number of iterations, before the neural network is considered to be trained.
 	
+	\subsection{Data Structure}
+	\cite{kottaimalai_eeg_2013} implemented a similar two-step system in which it utilized PCA and neural network modules. The paper concluded that the implementation of the PCA dimensionality reduction technique performed better than a single-step neural network. The system is designed for electroencephalography (EEG) signals. An EEG signal can be constructed as a two dimensional (2D) structure, Time and signal value. It can be further compressed into a vector, since it is discrete data. 
+	
+	As with x-ray images, it is two dimensional (2D) made up of pixels. However for pattern recognition, pixels are useless since an individual pixel holds very little information about the overall image. Additionally, there are numerous pixels which can make processing difficult. Hence, an image data can be structured in various ways depending on the number of features needed for the application. This means that the an image cannot be represented as a single vector, it requires multiple vectors to represent all the crucial information within the image.
+	
 	\section{Literature Review}
 	\label{sc: Literature Review}
 	The automation of detecting bone fractures is becoming increasingly popular. This is mainly due to the difficulty of applying manual analysis to the increasing volume of image data. The difficulty lies in the lack of human expertise, poor image quality and time. The solution to this problem has been explored by various biomedical and engineering professionals. 
@@ -602,7 +607,6 @@
 	\label{sc: Conclusion}
 	To conclude, the system proposed for the detection of bone fracture consists of two steps. The first step is dimensionality reduction and the second step is the automation based on a neural network model. The objective of implementing a dimensionality reduction process is to improve the performance of the automated bone fracture detection. The performance is measured by both execution speed and training speed, accuracy and error rate. 
 	
-	\newpage
 	\bibliographystyle{witseie}
 	\bibliography{standard}
 	
