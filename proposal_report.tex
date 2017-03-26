@@ -18,30 +18,30 @@
 	
 	\author{Alice Yang (597609) \thanks{School of Electrical and Information Engineering, University of the Witwatersrand, Private Bag 3, 2050, Johannesburg, South Africa} }
 	
-	\abstract{This paper proposes a two-step system for the detection of bone fractures in order to investigate the performance of the system compared to a single step system. The performance are defined by the speed of its execution, classification accuracy and error rate. The two-step system consists of a dimensionality reduction and a automated decision making process. The objective of the introduction of the dimensionality reduction process is to improve the performance of the automated decision making process during the training and decision making sessions. }
+	\abstract{This paper proposes a research in determining the optimal dimensionality reduction technique for a two-step system for bone fracture detection. The two-step system consists of a dimensionality reduction technique and a neural network component. In addition, an image pre-processing module is to be implemented. The module produces 26 different processed images from the original image. Furthermore, the pre-processing module extracts three features, namely gradient, lines and contours. The dimensionality reduction techniques proposed for comparison are Principal Component Analysis (PCA), Kernel Principal Component Analysis (KPCA) and Maximum Variance Unfolding (MVU). The proposed training technique for the neural network is back-propagation. To determine the optimal dimensionality reduction technique, the performance for each technique is compared. The performance is based on high detection accuracy, low error rate and execution time. Further investigation will be conducted to extend the two-step system for the detection of Tuberculosis disease (TB) as well as exending it to the manufacturing field. In the manufacturing field, the system can be utilized to detect fractures or inconsistancies within the manufactured components.}
 	
-	\keywords{Dimensionality Reduction, Neural Networks, Supervised Learning,  Unsupervied Learning, Bone Fractures, Medical Images}
+	\keywords{Dimensionality Reduction Techniques, Back-Propagation Neural Network, Bone Fracture Detection, Two-Step System, Principal Component Analysis, Kernel Principal Component Analysis, Maximum Variance Unfolding}
 	\maketitle
 	\thispagestyle{empty}\pagestyle{empty}
 	
 	\section{Introduction}
-	In medical the field there is an emphasis on the importance of medical diagnosis. In critical cases, an inaccurate diagnosis of a symptom can cost a patient's life. Many diagnosis are performed by trained medical doctors, however they are prone to making mistakes which can be influenced by external factors, such as fatigue and lack of training in the particular field. Automation of medical diagnosis was introduced in the early 1970s \cite{Ramesh2004}. There are many algorithms available in diagnosing patients. The basic algorithm consists of "if... then..." statements. Although the algorithm is simple, the list of conditions in the medical field are endless and as a result the execution time to diagnosis a patient's symptoms is not realistic. 
+	In medical the field there is an emphasis on the importance of medical diagnosis. In critical cases, an inaccurate diagnosis of a symptom can cost a patient's life. Most diagnoses are performed by trained medical doctors, however they are prone to making mistakes which can be influenced by external factors such as fatigue and lack of training in the particular field. Automation of medical diagnosis was introduced in the early 1970s \cite{Ramesh2004}. There are many algorithms available designed with the aim of diagnosing patients. The basic algorithm consists of "if... then..." statements. Although the algorithm is simple, the list of conditions in the medical field are endless and as a result the execution time to diagnosis a patient's symptoms is not realistic. 
 	
-	This proposal discusses the procedures taken to conduct research in discovering the best dimensionality reduction technique for a two-step system for detecting the presence of a bone fracture. The two-step system is defined by having a dimensionality reduction and neural network module. The purpose of introducing dimensionality reduction to the system is to compress the input data. The input data into the system are X-ray images. Raw x-ray images are large data files, which can make it difficult to train the neural network.
+	This proposal discusses the procedures taken to conduct research in discovering the best dimensionality reduction technique for a two-step system for detecting the presence of a bone fracture. The two-step system is defined as having a dimensionality reduction and neural network module. The purpose of introducing dimensionality reduction to the system is to compress the input data. The input data into the system are raw X-ray images. Raw X-ray images are large data files, which can make it difficult to train the neural network.
 	
 	In addition to detecting bone fractures, further investigations will be conducted to extend the system to detect the presence of Tuberculosis disease (TB). The system is further extended to the manufacturing field to detect fractures within axil components. Section \ref{sc: Background} and \ref{sc: Literature Review} presents the Background and Literature Review respectively. Section \ref{sc: Proposed Methodology} shows the Proposed Methodology to conduct the research. Section \ref{sc: Time Management and Milestones} illustrates the Time Management and Milestones that need to be achieved for the research and Section \ref{sc: Conclusion} concludes the proposal.  
 	
 	\section{Background}
 	\label{sc: Background}
-	The review done by \cite{Mahendran2011} for the automation of bone fracture detection indicated that there are various techniques in pattern recognition that comes in the form of unsupervised, reinforcement and supervised. The challenge found in classification are that there is an information overload and size and dimension are a concern. The problem with information overload is that it becomes to computationally expensive to find crucial information needed for the classification. The size and dimension of the information is a concern because large sizes of data contributes to the number of dimensionality, with high number of dimensions it presents a challenge in the classification process and in turn may require more computational resources.
+	The review done by \cite{Mahendran2011} for the automation of bone fracture detection indicated that there are various techniques in pattern recognition that comes in the form of unsupervised, reinforcement and supervised. The challenge found in classification is that there is an information overload and size and dimension are a concern. The problem with information overload is that it becomes to computationally expensive to find crucial information needed for the classification. The size and dimension of the information is a concern because large quantities of data increases the number of dimensionalities. A high number of dimensions presents a challenge in the classification process and in turn may require more computational resources.
 	
 	\subsection{Curse of Dimensionality}
-	The main problematic factor affecting the performance in classification is the curse of dimensionality. The curse of dimensionality is a problem due to the sparsity of high dimensional spaces, in which an absurd amount of training data is needed in order to get low variance  estimators \cite{intrator_feature_1992}.
+	The main problem affecting the performance in classification is the curse of dimensionality. The curse of dimensionality arises from the sparsity of high dimensional spaces, in which an absurd amount of training data is needed in order to get low variance  estimators \cite{intrator_feature_1992}.
 	
-	Feature extraction with supervised learning algorithms may seem most desired compared to unsupervised learning algorithms, since supervised learning algorithms have more information about the problem and features. However, unsupervised methods do not suffer the curse of dimensionality as supervised learning does since it makes use of local measures to optimally estimate a single dimensional projection function \cite{intrator_feature_1992}.
+	Feature extraction with supervised learning algorithms may seem, on one hand more desirable compared to unsupervised learning algorithms since supervised learning algorithms have more information about the problem and features. However, supervised learning suffers from the curse of dimensionality whereas supervised learning does not since it makes use of local measures to optimally estimate a single dimensional projection function \cite{intrator_feature_1992}.
 	
 	\subsection{Dimensionality Reduction}
-	The collection of digital data has increased drastically over the past decade, which led to datasets having high dimensionality. The high dimensionality found in datasets affected the performance of data processing algorithms. This is known as the curse of dimensionality \cite{Center2002}. Dimensionality reduction is a process targeted at reducing the dimensionality of the considered dataset by reducing the number of random variables. This process can be divided into two stages, namely Feature Selection and Feature Extraction. Both these stages are crucial for automating bone fracture detection. There are two types of dimensionality techniques, convex and concave techniques. This section focuses on convex techniques. Convex techniques optimizes objective functions that do not contain any local optima, which means that the solution space is convex \cite{Boyd2010}. The objective function is usually in a generalized Rayleigh quotient, which can be expressed in the following form: 
+	The collection of digital data has increased drastically over the past decade, which led to datasets having high dimensionality. The high dimensionality found in datasets affected the performance of data processing algorithms \cite{Center2002}. Dimensionality reduction is a process targeted at reducing the dimensionality of the considered dataset by reducing the number of random variables. This process can be divided into two stages, namely Feature Selection and Feature Extraction. Both these stages are crucial for automating bone fracture detection. There are two types of dimensionality techniques, convex and concave techniques. This section focuses on convex techniques. Convex techniques optimizes objective functions that do not contain any local optima, which means that the solution space is convex \cite{Boyd2010}. The objective function is usually in a generalized Rayleigh quotient, which can be expressed in the following form: 
 	\begin{equation}
 	\phi(\textbf{Y}) = \frac{\textbf{Y}^{T}\textbf{AY}}{\textbf{Y}^{T}\textbf{BY}}
 	\label{eq: general objective function}
@@ -77,7 +77,7 @@
 	geodesic distances between datapoints \cite{Zhang2012}. This means that the geodesic distance between $x_i$ and $x_j$ imitates as much of the Euclidean between the low-dimensional representation yi and yj as possible. The low-dimensional representation $y_i$ and $y_j$ are computed using the classical scaling technique, which results in a pairwise geodesic distance matrix. The drawback of the Isomap technique is that it constructs erroneous connections in the neighbourhood graph, G which can affect the performance of the Isomap.
 	
 	\subsubsection{Kernel PCA}
-	Kernel Principal Component Analysis (KPCA) is a technique that makes use kernel functions to map data into high dimensional space, by which the space is manipulated using linear PCA \cite{Cui2012}. KPCA makes use of a mapping function by which it computes the kernel matrix $K$ of datapoints $x_i$ and $x_j$. The entries for the kernel matrix is defined by Equation \ref{eq: kernel matrix enteries}.
+	Kernel Principal Component Analysis (KPCA) is a technique that makes use of kernel functions to map data into high dimensional space, by which the space is manipulated using linear PCA \cite{Cui2012}. KPCA makes use of a mapping function by which it computes the kernel matrix $K$ of datapoints $x_i$ and $x_j$. The entries for the kernel matrix is defined by Equation \ref{eq: kernel matrix enteries}.
 	\begin{equation}
 		k_{ij} = K(x_i, x_j)
 		\label{eq: kernel matrix enteries}
@@ -102,12 +102,12 @@
 		a_1^{(j)} &= \text{jth value in vector }\textbf{a}_1\\
 		K &= \text{kernel function}
 	\end{align*}
-	A disadvantage with KPCA is that the size of the kernel matrix is proportional square number of instances in the dataset. However despite the obvious disadvantages, KPCA is applied to facial recognition, speech recognition and novelty detection \cite{van2009dimensionality}.
+	A disadvantage with KPCA is that the size of the kernel matrix is proportional to the square number of instances in the dataset. However despite the obvious disadvantages, KPCA is applied to facial recognition, speech recognition and novelty detection \cite{van2009dimensionality}.
 	
 	\subsubsection{MVU}
 	Maximum Variance Unfolding (MVU) is a technique that aims to preserve as much of the distances and angles between nearby points by studying the kernel matrix. As result it forms a neighbourhood graph, $G$ \cite{Jiang2011}. A quadratic equation is formulated for the "unfolding" transformation. The "unfolding" transformation is where MVU maximizes the sum of the squared Euclidean distances between all the datapoints whilst preserving the distances within neighbouring points. This can be described in Equation \ref{eq: optimization problem}.
 	\begin{equation}
-		\text{Maximize } \sum_{ij}||\textbf{y}_i - \textbf{y}_j||^{2}
+		\text{Max } \sum_{ij}||\textbf{y}_i - \textbf{y}_j||^{2}
 		\label{eq: optimization problem}
 	\end{equation}
 	\begin{align*}
@@ -127,22 +127,22 @@
 			(3) \textbf{K}_{ii} - 2\textbf{K}_{ij} + \textbf{K}_{jj} = ||\textbf{x}_i - \textbf{x}_j||^{2}, \eta_{ij} = 1
 		\end{cases}
 	\end{equation} 
-	From the first condition $\textbf{K} \geq 0$, it indicates that matrix $\textbf{K}$ is required to be positive semi-definite, since SDP is convex. Thus the low-dimensional representation is obtained by solving the SDP. The main weakness found in MVU is the addition of constraints during optimization, which can result to unsuccessful unfolding of manifold. Although, despite its main weakness it is applied to sensor location and DNA micro-array data analysis \cite{van2009dimensionality}.
+	From the first condition $\textbf{K} \geq 0$, it indicates that matrix $\textbf{K}$ is required to be positive semi-definite, since SDP is convex. Thus the low-dimensional representation is obtained by solving the SDP. The main weakness found in MVU is the addition of constraints during optimization, which can result to unsuccessful unfolding of manifold. Despite this main weakness it is applied to sensor location and DNA micro-array data analysis \cite{van2009dimensionality}.
 	
 	\subsubsection{Diffusion Maps}
-	Diffusion Maps (DM) is a technique based on defining Markov Random Walk graph \cite{COIFMAN20065}. Markov Random Walk is a description of a random process that consists of the successful random steps applied to a mathematical space. The measurement for the proximity of the datapoints is attained by performing the random walk for a number of iterations. Through the number of iterations, the diffusion distances are obtained in which it is used for the representation of the data in the lower dimension. The purpose of the diffusion distance is to integrate over all the paths presented in the graph. For the construction the diffusion maps graph, the weights of the edges are computed using the Gaussian kernel function. The entries to form matrix \textbf{W} is expressed in Equation \ref{eq: W entries}.
+	Diffusion Maps (DM) is a technique based on defining Markov Random Walk graph \cite{COIFMAN20065}. Markov Random Walk is a description of a random process that consists of the successful random steps applied to a mathematical space. The measurement for the proximity of the datapoints is attained by performing the random walk for a number of iterations. Through the number of iterations, the diffusion distances are obtained which are used for the representation of the data in the lower dimension. The purpose of the diffusion distance is to integrate over all the paths presented in the graph. For the construction the diffusion maps graph, the weights of the edges are computed using the Gaussian kernel function. The entries to form matrix \textbf{W} is expressed in Equation \ref{eq: W entries}.
 	\begin{equation}
 		w_{ij} = e^{-\frac{||\textbf{x}_i - \textbf{x}_j||^2}{2\sigma^2}}
 		\label{eq: W entries}
 	\end{equation}
 	where
 	\[\sigma = \text{variance of the Gaussian}\]
-	The normalization of matrix \textbf{W} is necessary defining the forward transition probability matrix of dynamical process. The normalized matrix \textbf{W} results in matrix $\textbf{P}^{(1)}$ which is formed using Equation \ref{eq: probability transition}.
+	The normalization of matrix \textbf{W} is necessary in the forward transition probability matrix of dynamical process. The normalized matrix \textbf{W} results in matrix $\textbf{P}^{(1)}$ which is formed using Equation \ref{eq: probability transition}.
 	\begin{equation}
 		p_{ij}^{(1)} = \frac{w_{ij}}{\sum_{k}w_{ik}}
 		\label{eq: probability transition}
 	\end{equation}
-	By making use of the probability matrix for t iteration $\textbf{P}^{(t)}$, the diffusion distance can be defined in Equation \ref{eq: diffusion distance}.
+	By making use of the probability matrix for $t$ iterations $\textbf{P}^{(t)}$, the diffusion distance can be defined in Equation \ref{eq: diffusion distance}.
 	\begin{equation}
 		D^{(t)}(\textbf{x}_i, \textbf{x}_j) = \sqrt{\sum_{k}\frac{(p_{ik}^{(t)}-p_{jk}^{(t)})^2}{\psi(\textbf{x}_k)^{(0)}}}
 		\label{eq: diffusion distance}
@@ -175,7 +175,7 @@
 	The goal of supervised learning is to create a mapping function, such that when given new input data a prediction of the output data can be made. The mapping function is generated by with given data sets that consists of inputs with its corresponding outputs. Linear regression, random forest and SVM are popular supervised algorithms.
 	
 	\subsubsection{Na\"{i}ve Bayes}
-	Na\"{i}ve Bayes (NB) is a simple classifier that is based on the Bayes' theorem, in which the assumption made is that all the features are conditionally independent give the class label \cite{Murphy2006}: 
+	Na\"{i}ve Bayes (NB) is a simple classifier that is based on the Bayes' theorem, in which the assumption made is that all the features are conditionally independent given the class label \cite{Murphy2006}: 
 	\begin{equation}
 		p(x | y = c) = \prod_{i = 1}^{D}p(x_i | y = c)
 	\end{equation}
@@ -190,7 +190,7 @@
 	\subsubsection{Neural Network}
 	Neural Networks in another common tool selection for AI, whereby it consists of three distinguished layers, the input, hidden and output layer. A general neural network consists of one or two hidden layers. The network is trained before use, which deems it as supervised classification or predictions. In \cite{jyothi_congenital_2016}, the technique implemented is back-propagation neural network (BPNN). The network is trained using a Supervised Delta Learning Rule. The result from the developed technique is a binary outcome in which it indicates whether the subject is normal or abnormal.
 	
-	For neural network, there are various training method. The most commonly used training method is back-propagation. Another well known training method is feed-forward. The back-propagation training method is used to set weight values associated with the link connection between the input layer and the hidden layer as well as the hidden layer and the output layer. It calculates the gradient of a loss function in terms of all the weights within the neural network. This gradient is used to optimize the method which results in updating the weights within network \cite{Oukrich2016}.
+	For neural network, there are various training method. The most commonly used training method is back-propagation. The back-propagation training method is used to set weight values associated with the link connection between the input layer and the hidden layer as well as the hidden layer and the output layer. It calculates the gradient of a loss function in terms of all the weights within the neural network. This gradient is used to optimize the method which results in updating the weights within network \cite{Oukrich2016}.
 	
 	The back-propagation algorithm operates by initially assigning random values to the weights. This is expression is for the datasets modelled as follows. There $n$ input expressed as $X = \left\{X_1, X_2, ... , X_i, ..., X_n\right\}$, the hidden layer nodes are expressed by $H = \left\{H_1, H_2, ... , H_h\right\}$ and a set of $m$ output vector is expressed as $Y = \left\{Y_1, Y_2, ... , Y_j, ... , Y_m\right\}$. Therefore, for each node within the hidden layer, the net input, $net_{k}$ can be expressed in Equation \ref{eq: net input}.
 	\begin{equation}
@@ -214,19 +214,19 @@
 	This means that for every $t$ iteration, the error is calculated and the weights are re-adjusted such that the error is at a minimal. A pre-defined threshold can be used to determine the number of iterations, before the neural network is considered to be trained.
 	
 	\subsection{Data Structure}
-	\cite{kottaimalai_eeg_2013} implemented a similar two-step system in which it utilized PCA and neural network modules. The paper concluded that the implementation of the PCA dimensionality reduction technique performed better than a single-step neural network. The system is designed for electroencephalography (EEG) signals. An EEG signal can be constructed as a two dimensional (2D) structure, Time and signal value. It can be further compressed into a vector, since it is discrete data. 
+	A similar two-step system is implemented in \cite{kottaimalai_eeg_2013} and utilizes PCA and neural network modules. The paper concluded that the implementation of the PCA dimensionality reduction technique performed better than a single-step neural network. The system is designed for electroencephalography (EEG) signals. An EEG signal can be constructed as a two dimensional (2D) structure, Time and signal value. It can be further compressed into a vector, since it is discrete data. 
 	
 	As with x-ray images, it is two dimensional (2D) made up of pixels. However for pattern recognition, pixels are useless since an individual pixel holds very little information about the overall image. Additionally, there are numerous pixels which can make processing difficult. Hence, an image data can be structured in various ways depending on the number of features needed for the application. This means that the an image cannot be represented as a single vector, it requires multiple vectors to represent all the crucial information within the image.
 	
 	\section{Literature Review}
 	\label{sc: Literature Review}
-	The automation of detecting bone fractures is becoming increasingly popular. This is mainly due to the difficulty of applying manual analysis to the increasing volume of image data. The difficulty lies in the lack of human expertise, poor image quality and time. The solution to this problem has been explored by various biomedical and engineering professionals. 
+	The automation of bone fracture detection is becoming increasingly popular. This is mainly due to the difficulty of applying manual analysis to the increasing volume of image data. The difficulty lies in the lack of human expertise, poor image quality and time. The solution to this problem has been explored by various biomedical and engineering professionals. 
 	
 	A technique that outlines the fractured bones in an X-ray image of a patient's arm within casting material is present by \cite{Jia_Jiang2006}. The technique divides the image into segments, since the casting material causes a low contrast and high noise ratio within the X-ray image. To eliminate the noise, a geodesic active contour model with global coefficients is applied to the segments of bone region. The global constraint for the model is predefined by the prior shape collected. Feedback for each iteration is provided by a maximum-likelihood function. The experimental results obtained by the authors indicated that the technique produced outlines of the fractured bones on the low contrast X-ray images in a robust and accurate manner.
 	
-	The authors in \cite{Liang_Pan_Huang_Fan_2010} proposed a technique which makes use of mathematical morphology to identify tibia bone fractures. The technique applies segmentation to the x-ray images by dynamically dividing it into several intervals to determine the smallest intervals with the target. The technique makes use of the Otsu method to automatically threshold the small regions. A statistical method is employed for examining the segments to ensure that accuracy is achieved and to prevent over or under segmentation. The segments of the image are adjusted accordingly to the results obtained from each iteration. The iterations end when the test result conforms to stopping conditions. The segmentation process is then followed by mathematical morphology, in which the target border as well as boundary fractures are extracted. The precise location of fractures is detected by superposing the target border image to extracted skeleton.
+	The authors in \cite{Liang_Pan_Huang_Fan_2010} proposed a technique which makes use of mathematical morphology to identify tibia bone fractures. The technique applies segmentation to the x-ray images by dynamically dividing it into several intervals to determine the smallest intervals with the target. The technique makes use of the Otsu method to automatically threshold the small regions. A statistical method is employed for examining the segments to ensure that accuracy is achieved and to prevent over- or under-segmentation. The segments of the image are adjusted accordingly to the results obtained from each iteration. The iterations end when the test result conforms to predefined stopping conditions. The segmentation process is then followed by mathematical morphology, in which the target border as well as boundary fractures are extracted. The precise location of fractures is detected by superposing the target border image to extracted skeleton.
 	
-	An automated fracture detection system in long bones has been developed by the authors of \cite{Donnelley2005}. The system first extracts the edges of the x-ray image using a non-linear anisotropic diffusion method. The diffusion method operates by smoothing the image without discarding crucial information regarding the boundary locations. The second step is to determine parameters for the straight lines that best represent the edges of the long bones. This is done modifying the Hough transform which has an automatic peak detection. To highlight the abnormal regions which includes fractures, the magnitude and direction of the gradient is determined by making use of the calculated parameters.
+	An automated fracture detection system for long bones has been developed by the authors of \cite{Donnelley2005}. The system first extracts the edges of the x-ray image using a non-linear anisotropic diffusion method. The diffusion method operates by smoothing the image without discarding crucial information regarding the boundary locations. The second step is to determine parameters for the straight lines that best represent the edges of the long bones. This is done modifying the Hough transform which has an automatic peak detection. To highlight the abnormal regions which includes fractures, the magnitude and direction of the gradient is determined by making use of the calculated parameters.
 	
 	In \cite{Syiam_Aziem_Soliman2004}, an adaptive interface agent (AdAgen) that incorporates trained agents using neural network is proposed. The neural network is used to build the software interface agent for the detection of fractures in long bones. A semi-intelligent system is provided by the software agent. The results obtained from the simulations indicates that the incorporated agents assists with the performance of the automated fracture detection in leg radiography.
 	
@@ -245,7 +245,11 @@
 	
 	\cite{multiple_classification} presents a multiple classification system which detects fractures in long bones (Tibia). The features used for the system are texture and shape. The system makes use of three different classifiers, namely Back Propagation Neural Network, K-Nearest Neighbour and Support Vector Machine. Each classifier is trained with different sets of data. Fusion selection is adopted as the voting scheme used for decision making. The decisions made by the system is binary. It indicates the whether there is a fracture present or absent.
 	
+	The authors of \cite{Pune2016} proposed a system that extracts features and classify lung diseases using an artificial neural network. The lung diseases includes Tuberculosis (TB), lung cancer and pneumonia. The detection of the lung boundaries is done by pre-processing the image. The pre-processing technique is based on intensity and discontinuity methods. The features extracted are statistical and geometrical features. For image classification, the system makes use of feed forward and back propagation neural network to detect lung diseases.
+	
 	Outside of the medical field, there are various studies which combine both supervised and unsupervised learning. The authors of \cite{neagoe_new_2014} proposed a neural network based approach for automatic annotation of remote sensing imagery. The proposed model consists of Self-Organizing Map (SOM) as its unsupervised pattern recognition along with the supervised classifier of Concurrent (CSOM). The performance of the model is compared to classical statistical techniques which made use of Latent Dirichlet Allocation(LDA) and K-Means. The experimental results indicated that the proposed model was effective.
+	
+	The paper, \cite{Baqqar2012} focuses on developing a monitoring system for gearbox production. The system is based on operating parameters. These parameters are available in the machine control process. By making use of the machine control process, other additional measurements namely, vibration and acoustics can be discarded. The system proposed examines the data model using General Regression Neural Network (GRNN) to utilize the parameters. The GRNN captures the non-linear connections between the electrical current for the driving motor and the control parameters. The detection of abnormal gearbox conditions are done by comparing the measured and the predicted values. An abnormal gearbox condition is defined by the different gear tooth breakages which is based on a setup threshold in the system.
 	
 	\cite{kottaimalai_eeg_2013} designed a system in which it consists of a Principal Component Analysis(PCA) and a Neural Network module for the classification of EEG Signals. The authors compared the performance of the classification to a single neural network module. The final outcome from the experimentation is that the performance of the classification of the Principal Component Analysis with Neural Network system is better than Neural Network alone. 
 	
@@ -539,6 +543,9 @@
 		& e_m(t) = \text{error at node m for t iteration}
 	\end{align*}
 	
+	\subsection{Further Investigations}
+	Further investigations can be conducted to extend the two-step system to detect the presence of Tuberculosis disease (TB) as well as into the manufacturing field to detect fractures within manufactured products or even gaps (air bubbles) in welded components. However, this will require additional data and may need further image pre-processing. 
+	
 	\section{Time Management and Milestones}
 	\label{sc: Time Management and Milestones}
 	Table \ref{time_management} and Table \ref{tb: image table} illustrate the tasks that need to completed in order to obtain the results for the research.
@@ -560,7 +567,7 @@
 			\hline
 			5 & Jan 11 - Apr 10 2018 & Work on first letter paper \\
 			\hline
-			6 & Apr 11 - Jul 10 2018 & Integration of both dimensionality reduction model and the neural network model \\
+			6 & Apr 11 - Jul 10 2018 & Integration of both dimensionality reduction module and the neural network module \\
 			\hline
 			7 & Jul 11 - Oct 10 2018 & Work on second letter paper\\
 			\hline
@@ -585,22 +592,22 @@
 			\hline
 			4 & Jan 10 2018 & Complete development of neural network model \\
 			\hline
-			5 & Apr 10 & Submit first transaction paper \\
+			5 & Apr 10 & Submit first letter paper \\
 			\hline
 			6 & Jul 10 2018 & All models fully integrated \\
 			\hline
 			7 & Aug 10 2018 & All results for research is obtained \\
 			\hline
-			8 & Oct 10 2018 & Submit second transaction paper \\
+			8 & Oct 10 2018 & Submit second letter paper \\
 			\hline
 			9 & Jan 10 2019 & Submit dissertation for approval \\
 			\hline
 		\end{tabular}
 	\end{table}
-	
+
 	\section{Conclusion}
 	\label{sc: Conclusion}
-	To conclude, the system proposed for the detection of bone fracture consists of two steps. The first step is dimensionality reduction and the second step is the automation based on a neural network model. The objective of implementing a dimensionality reduction process is to improve the performance of the automated bone fracture detection. The performance is measured by both execution speed and training speed, accuracy and error rate. 
+	The research proposed in this paper is to determine an optimal dimensionality reduction technique for a two-step system to detect the presence of a bone fracture from an x-ray image. The dimensionality techniques mentioned in the proposed methodology are PCA, KPCA and MVU. The dimensionality reduction technique is implemented in the first step of the system, whilst the second step is a neural network component. The neural network component is trained using back-propagation. The data structure is based on the image pre-processing technique, in which the data structure is constructed from the 26 resultant images as well as the three extracted features, gradient, lines and contours. The optimal dimensionality reduction technique is determined by the performance of each technique. The performance is based on detection accuracy, error rate and execution speed. Additionally, further investigations will be conducted to extend the system to the detection of Tuberculosis disease (TB) as well as the manufacturing field to detect fractures within axil components.
 	
 	\bibliographystyle{witseie}
 	\bibliography{standard}
