@@ -25,11 +25,48 @@
 	\thispagestyle{empty}\pagestyle{empty}
 	
 	\section{Introduction}
-	In medical the field there is an emphasis on the importance of medical diagnosis. In critical cases, an inaccurate diagnosis of a symptom can cost a patient's life. Most diagnoses are performed by trained medical doctors, however they are prone to making mistakes which can be influenced by external factors such as fatigue and lack of training in the particular field. Automation of medical diagnosis was introduced in the early 1970s \cite{Ramesh2004}. There are many algorithms available designed with the aim of diagnosing patients. The basic algorithm consists of "if... then..." statements. Although the algorithm is simple, the list of conditions in the medical field are endless and as a result the execution time to diagnosis a patient's symptoms is not realistic. 
+	In the medical field there is an emphasis on the importance of medical diagnosis. In critical cases, an inaccurate diagnosis of a symptom can cost a patient's life. Most diagnoses are performed by trained medical doctors, however they are prone to making mistakes which can be influenced by external factors such as fatigue and lack of training in the particular field. Automation of medical diagnosis was introduced in the early 1970s \cite{Ramesh2004}. There are many algorithms available designed with the aim of diagnosing patients. The basic algorithm consists of "if... then..." statements. Although the algorithm is simple, the list of conditions in the medical field are endless and as a result the execution time to diagnosis a patient's symptoms is not realistic. 
 	
 	This proposal discusses the procedures taken to conduct research in discovering the best dimensionality reduction technique for a two-step system for detecting the presence of a bone fracture. The two-step system is defined as having a dimensionality reduction and neural network module. The purpose of introducing dimensionality reduction to the system is to compress the input data. The input data into the system are raw X-ray images. Raw X-ray images are large data files, which can make it difficult to train the neural network.
 	
-	In addition to detecting bone fractures, further investigations will be conducted to extend the system to detect the presence of Tuberculosis disease (TB). The system is further extended to the manufacturing field to detect fractures within axil components. Section \ref{sc: Background} and \ref{sc: Literature Review} presents the Background and Literature Review respectively. Section \ref{sc: Proposed Methodology} shows the Proposed Methodology to conduct the research. Section \ref{sc: Time Management and Milestones} illustrates the Time Management and Milestones that need to be achieved for the research and Section \ref{sc: Conclusion} concludes the proposal.  
+	In addition to detecting bone fractures, further investigations will be conducted to extend the system to detect the presence of Tuberculosis disease (TB). The system is further extended to the manufacturing field to detect fractures within axle components. Section \ref{sc: Background} and \ref{sc: Literature Review} presents the Background and Literature Review respectively. Section \ref{sc: Proposed Methodology} shows the Proposed Methodology to conduct the research. Section \ref{sc: Time Management and Milestones} illustrates the Time Management and Milestones that need to be achieved for the research and Section \ref{sc: Conclusion} concludes the proposal. 
+	
+	\section{Literature Review}
+	\label{sc: Literature Review}
+	The automation of bone fracture detection is becoming increasingly popular. This is mainly due to the difficulty of applying manual analysis to the increasing volume of image data. The difficulty lies in the lack of human expertise, poor image quality and time. The solution to this problem has been explored by various biomedical and engineering professionals. 
+	
+	A technique that outlines the fractured bones in an X-ray image of a patient's arm within casting material is present by \cite{Jia_Jiang2006}. The technique divides the image into segments, since the casting material causes a low contrast and high noise ratio within the X-ray image. To eliminate the noise, a geodesic active contour model with global coefficients is applied to the segments of bone region. The global constraint for the model is predefined by the prior shape collected. Feedback for each iteration is provided by a maximum-likelihood function. The experimental results obtained by the authors indicated that the technique produced outlines of the fractured bones on the low contrast X-ray images in a robust and accurate manner.
+	
+	The authors in \cite{Liang_Pan_Huang_Fan_2010} proposed a technique which makes use of mathematical morphology to identify tibia bone fractures. The technique applies segmentation to the x-ray images by dynamically dividing it into several intervals to determine the smallest intervals with the target. The technique makes use of the Otsu method to automatically threshold the small regions. A statistical method is employed for examining the segments to ensure that accuracy is achieved and to prevent over- or under-segmentation. The segments of the image are adjusted accordingly to the results obtained from each iteration. The iterations end when the test result conforms to predefined stopping conditions. The segmentation process is then followed by mathematical morphology, in which the target border as well as boundary fractures are extracted. The precise location of fractures is detected by superposing the target border image to extracted skeleton.
+	
+	An automated fracture detection system for long bones has been developed by the authors of \cite{Donnelley2005}. The system first extracts the edges of the x-ray image using a non-linear anisotropic diffusion method. The diffusion method operates by smoothing the image without discarding crucial information regarding the boundary locations. The second step is to determine parameters for the straight lines that best represent the edges of the long bones. This is done modifying the Hough transform which has an automatic peak detection. To highlight the abnormal regions which includes fractures, the magnitude and direction of the gradient is determined by making use of the calculated parameters.
+	
+	In \cite{Syiam_Aziem_Soliman2004}, an adaptive interface agent (AdAgen) that incorporates trained agents using neural network is proposed. The neural network is used to build the software interface agent for the detection of fractures in long bones. A semi-intelligent system is provided by the software agent. The results obtained from the simulations indicates that the incorporated agents assists with the performance of the automated fracture detection in leg radiography.
+	
+	The general approach to classifying the presence of bone fracture involves mapping the data to one of several predefined classes. However, there are challenges presented 
+	in the classification technique which are due to information overload and size and dimension of the data \cite{Mahendran2011}. According to \cite{Mahendran2011}, a classification technique is defined as a systematic approach of processing data input by constructing classification models. Examples of classification techniques includes Decision Tree Classifiers, Rule-Based Classifiers, Neural Networks, Support Vector Machines and Na\"{i}ve Bayes Classifiers.
+	
+	There are various standard classifiers implemented for automating the detection of bone fractures using x-ray images. \cite{Mahendran2012} describes a study done to test the performance of single and combination classifiers. The classifiers used in the study are Back-Propagation Neural Network (BPNN), Support Vector Machine (SVM) and Na\"{i}ve Bayes (NB) classifiers. Contrast, Homogeneity, Energy, Entropy, Mean, Variance, Standard Deviation Correlation, Gabor orientation (GO), Markov Random Field (MRF) and intensity gradient direction (IGD) are features exacted for testing each classifier. The metrics used to evaluate the performance of each classifier are sensitivity, specificity, positive predictive value, negative predictive value, accuracy and execution time. The authors discovered that fusion classifiers enhances the detection capacity. Furthermore, the results indicated that the combination of SVM and BPNN obtained the best performance.
+	
+	\cite{Mahendran_Enhanced} proposes a four-step system that makes use of fusion-classification techniques to automated the detection of bone fracture specifically for leg bones (Tibia). The four-steps are preprocessing, segmentation, feature extraction and bone detection. The three classifiers during the fusion classification are Feed Forward Back-Propagation Neural Network (BPNN), Support Vector Machine (SVM) and Na\"{i}ve Bayes Classifiers (NB). Through experimentation, the authors stated that the proposed four-step system showed significant improvement in terms of detection rate and speed of classification.
+	
+	In \cite{ComputerAidedBoneFractureDetection}, the authors proposed a system based on Artificial Neural Network (ANN) for the detection of bone fractures. The system is designed to accept X-ray images as its input. The images are then enhanced using pre-processing techniques. The ANN module is trained using the enhanced x-ray images. "\textit{True Detection Rate}" and "\textit{False Detection Rate}" are used to evaluate the performance of the system. The results that authors obtained for the proposed system indicated that the system had a 89\% success rate.
+	
+	\cite{lim2004detection} describes an approach for automating the detection of bone fractures in the femur and radius. The system consists of a combinational approach. The first step of the system is to pre-process the input, by extracting features, namely Gabor texture, Markov Random Field texture and intensity gradient. The classifiers implemented for testing are Bayesian classifier and Support Vector Machine (SVM). From experimental results, the combined approach improved the detection rate of bone fractures as well as the classification accuracy compared to a single classification approach.
+	
+	\cite{JoshuaCongfuHe2007} presents a fracture detection technique which partitions the problem into smaller sub-problems. The sub-problems lie within the SVM kernel space. The training process trains multiple SVMs, such that each sub-problem can be solved by a specialized SVM, therefore forming a hierarchy of SVMs. The experimental results obtained indicates that the hierarchy of SVMs performs better than a single SVM. Furthermore, the performance showed that it enhanced the accuracy and reliability of SVMs.
+	
+	\cite{multiple_classification} presents a multiple classification system which detects fractures in long bones (Tibia). The features used for the system are texture and shape. The system makes use of three different classifiers, namely Back Propagation Neural Network, K-Nearest Neighbour and Support Vector Machine. Each classifier is trained with different sets of data. Fusion selection is adopted as the voting scheme used for decision making. The decisions made by the system is binary. It indicates the whether there is a fracture present or absent.
+	
+	\cite{Li_Liang2016} presents a convolutional neural network (CNN) model that automatically detect lumbar vertebrae in C-arm and X-ray images. The training of data is done by making use of Disaster Risk Reduction (DRR). The computational complexity is reduced by automatic segmentation of Region of Interest (ROI). A feature fusion deep learning (FFDL) model is included to combine the two features of lumbar vertebra X-ray images. This makes use of sobel kernel and Gabor kernel to extract the features namely, contour and texture. From the experiments, the authors found that the proposed model performed more accurately in abnormal cases with pathologies and surgical implants. 
+	
+	The authors of \cite{Pune2016} proposed a system that extracts features and classify lung diseases using an artificial neural network. The lung diseases includes Tuberculosis (TB), lung cancer and pneumonia. The detection of the lung boundaries is done by pre-processing the image. The pre-processing technique is based on intensity and discontinuity methods. The features extracted are statistical and geometrical features. For image classification, the system makes use of feed forward and back propagation neural network to detect lung diseases. 
+	
+	Outside of the medical field, there are various studies which combine both supervised and unsupervised learning. The authors of \cite{neagoe_new_2014} proposed a neural network based approach for automatic annotation of remote sensing imagery. The proposed model consists of Self-Organizing Map (SOM) as its unsupervised pattern recognition along with the supervised classifier of Concurrent (CSOM). The performance of the model is compared to classical statistical techniques which made use of Latent Dirichlet Allocation(LDA) and K-Means. The experimental results indicated that the proposed model was effective.
+	
+	The paper, \cite{Baqqar2012} focuses on developing a monitoring system for gearbox production. The system is based on operating parameters. These parameters are available in the machine control process. By making use of the machine control process, other additional measurements namely, vibration and acoustics can be discarded. The system proposed examines the data model using General Regression Neural Network (GRNN) to utilize the parameters. The GRNN captures the non-linear connections between the electrical current for the driving motor and the control parameters. The detection of abnormal gearbox conditions are done by comparing the measured and the predicted values. An abnormal gearbox condition is defined by the different gear tooth breakages which is based on a setup threshold in the system.
+	
+	\cite{kottaimalai_eeg_2013} designed a system in which it consists of a Principal Component Analysis(PCA) and a Neural Network module for the classification of EEG Signals. The authors compared the performance of the classification to a single neural network module. The final outcome from the experimentation is that the performance of the classification of the Principal Component Analysis with Neural Network system is better than Neural Network alone.  
 	
 	\section{Background}
 	\label{sc: Background}
@@ -218,41 +255,6 @@
 	
 	As with x-ray images, it is two dimensional (2D) made up of pixels. However for pattern recognition, pixels are useless since an individual pixel holds very little information about the overall image. Additionally, there are numerous pixels which can make processing difficult. Hence, an image data can be structured in various ways depending on the number of features needed for the application. This means that the an image cannot be represented as a single vector, it requires multiple vectors to represent all the crucial information within the image.
 	
-	\section{Literature Review}
-	\label{sc: Literature Review}
-	The automation of bone fracture detection is becoming increasingly popular. This is mainly due to the difficulty of applying manual analysis to the increasing volume of image data. The difficulty lies in the lack of human expertise, poor image quality and time. The solution to this problem has been explored by various biomedical and engineering professionals. 
-	
-	A technique that outlines the fractured bones in an X-ray image of a patient's arm within casting material is present by \cite{Jia_Jiang2006}. The technique divides the image into segments, since the casting material causes a low contrast and high noise ratio within the X-ray image. To eliminate the noise, a geodesic active contour model with global coefficients is applied to the segments of bone region. The global constraint for the model is predefined by the prior shape collected. Feedback for each iteration is provided by a maximum-likelihood function. The experimental results obtained by the authors indicated that the technique produced outlines of the fractured bones on the low contrast X-ray images in a robust and accurate manner.
-	
-	The authors in \cite{Liang_Pan_Huang_Fan_2010} proposed a technique which makes use of mathematical morphology to identify tibia bone fractures. The technique applies segmentation to the x-ray images by dynamically dividing it into several intervals to determine the smallest intervals with the target. The technique makes use of the Otsu method to automatically threshold the small regions. A statistical method is employed for examining the segments to ensure that accuracy is achieved and to prevent over- or under-segmentation. The segments of the image are adjusted accordingly to the results obtained from each iteration. The iterations end when the test result conforms to predefined stopping conditions. The segmentation process is then followed by mathematical morphology, in which the target border as well as boundary fractures are extracted. The precise location of fractures is detected by superposing the target border image to extracted skeleton.
-	
-	An automated fracture detection system for long bones has been developed by the authors of \cite{Donnelley2005}. The system first extracts the edges of the x-ray image using a non-linear anisotropic diffusion method. The diffusion method operates by smoothing the image without discarding crucial information regarding the boundary locations. The second step is to determine parameters for the straight lines that best represent the edges of the long bones. This is done modifying the Hough transform which has an automatic peak detection. To highlight the abnormal regions which includes fractures, the magnitude and direction of the gradient is determined by making use of the calculated parameters.
-	
-	In \cite{Syiam_Aziem_Soliman2004}, an adaptive interface agent (AdAgen) that incorporates trained agents using neural network is proposed. The neural network is used to build the software interface agent for the detection of fractures in long bones. A semi-intelligent system is provided by the software agent. The results obtained from the simulations indicates that the incorporated agents assists with the performance of the automated fracture detection in leg radiography.
-	
-	The general approach to classifying the presence of bone fracture involves mapping the data to one of several predefined classes. However, there are challenges presented 
-	in the classification technique which are due to information overload and size and dimension of the data \cite{Mahendran2011}. According to \cite{Mahendran2011}, a classification technique is defined as a systematic approach of processing data input by constructing classification models. Examples of classification techniques includes Decision Tree Classifiers, Rule-Based Classifiers, Neural Networks, Support Vector Machines and Na\"{i}ve Bayes Classifiers.
-	
-	There are various standard classifiers implemented for automating the detection of bone fractures using x-ray images. \cite{Mahendran2012} describes a study done to test the performance of single and combination classifiers. The classifiers used in the study are Back-Propagation Neural Network (BPNN), Support Vector Machine (SVM) and Na\"{i}ve Bayes (NB) classifiers. Contrast, Homogeneity, Energy, Entropy, Mean, Variance, Standard Deviation Correlation, Gabor orientation (GO), Markov Random Field (MRF) and intensity gradient direction (IGD) are features exacted for testing each classifier. The metrics used to evaluate the performance of each classifier are sensitivity, specificity, positive predictive value, negative predictive value, accuracy and execution time. The authors discovered that fusion classifiers enhances the detection capacity. Furthermore, the results indicated that the combination of SVM and BPNN obtained the best performance.
-	
-	\cite{Mahendran_Enhanced} proposes a four-step system that makes use of fusion-classification techniques to automated the detection of bone fracture specifically for leg bones (Tibia). The four-steps are preprocessing, segmentation, feature extraction and bone detection. The three classifiers during the fusion classification are Feed Forward Back-Propagation Neural Network (BPNN), Support Vector Machine (SVM) and Na\"{i}ve Bayes Classifiers (NB). Through experimentation, the authors stated that the proposed four-step system showed significant improvement in terms of detection rate and speed of classification.
-	
-	In \cite{ComputerAidedBoneFractureDetection}, the authors proposed a system based on Artificial Neural Network (ANN) for the detection of bone fractures. The system is designed to accept X-ray images as its input. The images are then enhanced using pre-processing techniques. The ANN module is trained using the enhanced x-ray images. "\textit{True Detection Rate}" and "\textit{False Detection Rate}" are used to evaluate the performance of the system. The results that authors obtained for the proposed system indicated that the system had a 89\% success rate.
-	
-	\cite{lim2004detection} describes an approach for automating the detection of bone fractures in the femur and radius. The system consists of a combinational approach. The first step of the system is to pre-process the input, by extracting features, namely Gabor texture, Markov Random Field texture and intensity gradient. The classifiers implemented for testing are Bayesian classifier and Support Vector Machine (SVM). From experimental results, the combined approach improved the detection rate of bone fractures as well as the classification accuracy compared to a single classification approach.
-	
-	\cite{JoshuaCongfuHe2007} presents a fracture detection technique which partitions the problem into smaller sub-problems. The sub-problems lie within the SVM kernel space. The training process trains multiple SVMs, such that each sub-problem can be solved by a specialized SVM, therefore forming a hierarchy of SVMs. The experimental results obtained indicates that the hierarchy of SVMs performs better than a single SVM. Furthermore, the performance showed that it enhanced the accuracy and reliability of SVMs.
-	
-	\cite{multiple_classification} presents a multiple classification system which detects fractures in long bones (Tibia). The features used for the system are texture and shape. The system makes use of three different classifiers, namely Back Propagation Neural Network, K-Nearest Neighbour and Support Vector Machine. Each classifier is trained with different sets of data. Fusion selection is adopted as the voting scheme used for decision making. The decisions made by the system is binary. It indicates the whether there is a fracture present or absent.
-	
-	The authors of \cite{Pune2016} proposed a system that extracts features and classify lung diseases using an artificial neural network. The lung diseases includes Tuberculosis (TB), lung cancer and pneumonia. The detection of the lung boundaries is done by pre-processing the image. The pre-processing technique is based on intensity and discontinuity methods. The features extracted are statistical and geometrical features. For image classification, the system makes use of feed forward and back propagation neural network to detect lung diseases.
-	
-	Outside of the medical field, there are various studies which combine both supervised and unsupervised learning. The authors of \cite{neagoe_new_2014} proposed a neural network based approach for automatic annotation of remote sensing imagery. The proposed model consists of Self-Organizing Map (SOM) as its unsupervised pattern recognition along with the supervised classifier of Concurrent (CSOM). The performance of the model is compared to classical statistical techniques which made use of Latent Dirichlet Allocation(LDA) and K-Means. The experimental results indicated that the proposed model was effective.
-	
-	The paper, \cite{Baqqar2012} focuses on developing a monitoring system for gearbox production. The system is based on operating parameters. These parameters are available in the machine control process. By making use of the machine control process, other additional measurements namely, vibration and acoustics can be discarded. The system proposed examines the data model using General Regression Neural Network (GRNN) to utilize the parameters. The GRNN captures the non-linear connections between the electrical current for the driving motor and the control parameters. The detection of abnormal gearbox conditions are done by comparing the measured and the predicted values. An abnormal gearbox condition is defined by the different gear tooth breakages which is based on a setup threshold in the system.
-	
-	\cite{kottaimalai_eeg_2013} designed a system in which it consists of a Principal Component Analysis(PCA) and a Neural Network module for the classification of EEG Signals. The authors compared the performance of the classification to a single neural network module. The final outcome from the experimentation is that the performance of the classification of the Principal Component Analysis with Neural Network system is better than Neural Network alone. 
-	
 	\section{Proposed Methodology}
 	\label{sc: Proposed Methodology}
 	This section describes the methodology to conduct the research for determining the optimal dimensionality reduction technique. The dimensionality reduction technique is used in a two-step system for detecting bone fractures from medical x-ray images.
@@ -278,33 +280,33 @@
 			\hline
 			Image (jpg file) & Pixel Size \\
 			\hline \hline
-			equalised &  \\
-			gamma\_corrected &  \\
-			denoised & \\
-			sharpened & \\
-			hist1 & \\
-			hist2 & \\
-			bitnot & \\
-			bitor & \\
-			blur & \\
-			a\_contour & \\
-			binary\_high & \\
-			binary\_inverse & $809 \times 899$ \\
-			binary\_low & \\
-			canny\_contours\_after\_joining & \\
-			canny\_contours\_after\_removing & \\
-			i\_cannyx3 & \\
-			sobel\_dire & \\
-			sobel\_value & \\
-			u\_hough & \\
-			v\_hough & \\
-			w\_hough & \\
+			$\cdot$ Equalised &  \\
+			$\cdot$ Gamma Corrected &  \\
+			$\cdot$ Denoised & \\
+			$\cdot$ Sharpened & \\
+			$\cdot$ Segmented Histogram Mode 1 (black on white) & \\
+			$\cdot$ Segmented Histogram Mode 2 (white on black) & \\
+			$\cdot$ Segmented Histogram Mode 1 Bitwise Not & \\
+			$\cdot$ Segmented Histogram Mode 2 Bitwise Or & \\
+			$\cdot$ Blur & \\
+			$\cdot$ Canny Contours & \\
+			$\cdot$ Binary High & \\
+			$\cdot$ Binary Inverse & $809 \times 899$ \\
+			$\cdot$ Binary Low & \\
+			$\cdot$ Canny Contours After Joining & \\
+			$\cdot$ Canny Contours After Removing & \\
+			$\cdot$ Canny & \\
+			$\cdot$ Sobel Orientation & \\
+			$\cdot$ Sobel Value & \\
+			$\cdot$ Hough U & \\
+			$\cdot$ Hough V & \\
+			$\cdot$ Hough W & \\
 			\hline
-			binary\_gray & \\
-			circle & \\
-			circle\_contours & $1200 \times 900$ \\
-			gray & \\
-			sobel & \\
+			$\cdot$ Binary Grey & \\
+			$\cdot$ Circle & \\
+			$\cdot$ Circle Contours & $1200 \times 900$ \\
+			$\cdot$ Gray & \\
+			$\cdot$ Sobel & \\
 			\hline
 		\end{tabular}
 	\end{table}
@@ -341,7 +343,7 @@
 
 	\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.23]{data_structure.png}
+		\includegraphics[scale=0.23]{image_processing.png}
 		\caption{Data structure for all 26 pre-processed images to represent the original image}
 		\label{fig: data_structure}
 	\end{figure}
@@ -435,7 +437,7 @@
 			\label{eq: KPCA Kak}
 			Ka_k = \lambda N a_k
 		\end{equation} 
-		\item Step 7: $\phi(x_i)$ does not always have zero-mean in the original space and it cannot be guaranteed that it is centred in the altered space. Therefore it can be used to created the Gram Matrix, $K'$ which can substitute the kernel matrix, $K$. The Gram matrix ensures that $\phi(x_i)$ is centred in the altered space. The Gram matrix is given by Equation \ref{eq: KPCA Gram Matrix}.
+		\item Step 7: $\phi(x_i)$ does not always have zero-mean in the original space and it cannot be guaranteed that it is centred in the altered space. Therefore it can be used to created the Gram Matrix, $K'$ which can substitute the kernel matrix, $K$. The Gram matrix ensures that $\phi(x_i)$ is centred in the altered space. The Gram matrix is given by Equation \ref{eq: KPCA Gram Matrix} \cite{Ibrahim_Baharudin2016} \cite{Scholkopf2012}.
 		\begin{equation}
 			\label{eq: KPCA Gram Matrix}
 			K' = K - 1_N K - 1K1_N + 1_NK1_N
@@ -607,7 +609,7 @@
 
 	\section{Conclusion}
 	\label{sc: Conclusion}
-	The research proposed in this paper is to determine an optimal dimensionality reduction technique for a two-step system to detect the presence of a bone fracture from an x-ray image. The dimensionality techniques mentioned in the proposed methodology are PCA, KPCA and MVU. The dimensionality reduction technique is implemented in the first step of the system, whilst the second step is a neural network component. The neural network component is trained using back-propagation. The data structure is based on the image pre-processing technique, in which the data structure is constructed from the 26 resultant images as well as the three extracted features, gradient, lines and contours. The optimal dimensionality reduction technique is determined by the performance of each technique. The performance is based on detection accuracy, error rate and execution speed. Additionally, further investigations will be conducted to extend the system to the detection of Tuberculosis disease (TB) as well as the manufacturing field to detect fractures within axil components.
+	The research proposed in this paper is to determine an optimal dimensionality reduction technique for a two-step system to detect the presence of a bone fracture from an x-ray image. The dimensionality techniques mentioned in the proposed methodology are PCA, KPCA and MVU. The dimensionality reduction technique is implemented in the first step of the system, whilst the second step is a neural network component. The neural network component is trained using back-propagation. The data structure is based on the image pre-processing technique, in which the data structure is constructed from the 26 resultant images as well as the three extracted features, gradient, lines and contours. The optimal dimensionality reduction technique is determined by the performance of each technique. The performance is based on detection accuracy, error rate and execution speed. Additionally, further investigations will be conducted to extend the system to the detection of Tuberculosis disease (TB) as well as the manufacturing field to detect fractures within axle components.
 	
 	\bibliographystyle{witseie}
 	\bibliography{standard}
