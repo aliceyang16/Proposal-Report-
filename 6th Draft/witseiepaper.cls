@@ -1,4 +1,4 @@
-%% witseiepaper.cls
+%% witseiepaper.cls 
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  witseiepaper.sty  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% ===========================================================================
@@ -91,12 +91,12 @@
 \columnsep        6.0mm
 \parindent        0.0mm
 \headsep          0.0mm
-\headheight       0.0mm
+\headheight       0.0mm 
 \lineskip           1pt
 \normallineskip     1pt
 \def\baselinestretch{1}
 
-\if@draftversion
+\if@draftversion 
 \topmargin       -6.0mm
 \oddsidemargin      0mm
 \evensidemargin     0mm
@@ -271,7 +271,7 @@
 
 \newif\if@restonecol
 \def\titlepage{\@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
-        \else \newpage \fi \thispagestyle{empty}\c@page\z@}
+    \else \newpage \fi \thispagestyle{empty}\c@page\z@}
 \def\endtitlepage{\if@restonecol\twocolumn \else \newpage \fi}
 
 \arraycolsep     5pt

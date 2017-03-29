@@ -14,8 +14,13 @@
 %------------------------------------------------------------------------------
 %                       Switch to detect LaTeX or PDFTeX
 %------------------------------------------------------------------------------
-\usepackage{ifpdf}      
-%---------------------------------------------------------------------
+\newif\ifpdf
+\ifx\pdfoutput\undefined    % pdfoutput=0 for LaTeX
+     \pdffalse
+\else                       % pdfoutput=1 for PDFTeX
+     \pdftrue
+\fi
+%------------------------------------------------------------------------------
 %                       Options for PDFTeX
 %------------------------------------------------------------------------------
 \ifpdf
@@ -34,7 +39,7 @@
     \RequirePackage[final]{graphicx}
 %    \graphicspath{{figures/eps/}}           % graphics files are in the eps directory
                                             % Comment the options that are not to be used
-    \RequirePackage[dvipdfm]{hyperref}      % for LaTeX -> DVIPDFM
+    \RequirePackage[dvipdfm]{hyperref}      % for LaTeX -> DVIPDFM 
     %\RequirePackage[dvips]{hyperref}       % for LaTeX -> DVIPS -> PS2PDF. Does not support linebreaks in URLs!
     %\RequirePackage{hyperref}
     %\RequirePackage[pagebackref]{hyperref} % with back-references
@@ -68,8 +73,7 @@
 %\usepackage{color}                                      % for defining custom colours
 %\definecolor{darkblue}{rgb}{0,0,0.5}                    % 'red', 'green' and 'blue' are predefined
 \usepackage{balance}                                     % balance that last page of two-column output
-\usepackage{texnames}                                   % defines \LaTeX \BibTeX etc
-%\usepackage{microtype}                                   % character protusion and expansion for better alignment at right margin
+
 % Mostly KJN
 
 %\usepackage{subfigure}

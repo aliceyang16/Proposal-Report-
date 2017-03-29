@@ -1,18 +1,33 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Background}{}% 2
-\BOOKMARK [1][-]{section.3}{Literature Review}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{Unsupervised Learning}{section.3}% 4
+\BOOKMARK [1][-]{section.2}{Literature Review}{}% 2
+\BOOKMARK [1][-]{section.3}{Background}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Curse of Dimensionality}{section.3}% 4
 \BOOKMARK [2][-]{subsection.3.2}{Dimensionality Reduction}{section.3}% 5
-\BOOKMARK [3][-]{subsubsection.3.2.1}{PCA/Classical Scaling}{subsection.3.2}% 6
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Principal Component Analysis and Classical Scaling}{subsection.3.2}% 6
 \BOOKMARK [3][-]{subsubsection.3.2.2}{Isomap}{subsection.3.2}% 7
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Kernel PCA}{subsection.3.2}% 8
-\BOOKMARK [3][-]{subsubsection.3.2.4}{Supervised Learning}{subsection.3.2}% 9
-\BOOKMARK [3][-]{subsubsection.3.2.5}{Curse of Dimensionality}{subsection.3.2}% 10
-\BOOKMARK [3][-]{subsubsection.3.2.6}{Combination Techniques}{subsection.3.2}% 11
-\BOOKMARK [1][-]{section.4}{Problem Analysis}{}% 12
-\BOOKMARK [1][-]{section.5}{Proposed Methodology}{}% 13
-\BOOKMARK [2][-]{subsection.5.1}{Feature Selection}{section.5}% 14
-\BOOKMARK [2][-]{subsection.5.2}{Dimensionality Reduction}{section.5}% 15
-\BOOKMARK [2][-]{subsection.5.3}{Automated Decision Making Techniques}{section.5}% 16
-\BOOKMARK [1][-]{section.6}{Time Management}{}% 17
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 18
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Maximum Variance Unfolding}{subsection.3.2}% 9
+\BOOKMARK [3][-]{subsubsection.3.2.5}{Diffusion Maps}{subsection.3.2}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Supervised Learning and Neural Networks}{section.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Na\357ve Bayes}{subsection.3.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Support Vector Machine}{subsection.3.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Neural Network}{subsection.3.3}% 14
+\BOOKMARK [2][-]{subsection.3.4}{Data Structure}{section.3}% 15
+\BOOKMARK [1][-]{section.4}{Proposed Methodology}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{Image Pre-Processing}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Data Structure}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.3}{Dimensionality Reduction}{section.4}% 19
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Principal Component Analysis}{subsection.4.3}% 20
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Kernel Principal Component Analysis}{subsection.4.3}% 21
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Maximum Variance Unfolding}{subsection.4.3}% 22
+\BOOKMARK [2][-]{subsection.4.4}{Neural Network}{section.4}% 23
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Step 1:}{subsection.4.4}% 24
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Step 2:}{subsection.4.4}% 25
+\BOOKMARK [3][-]{subsubsection.4.4.3}{Step 3:}{subsection.4.4}% 26
+\BOOKMARK [3][-]{subsubsection.4.4.4}{Step 4:}{subsection.4.4}% 27
+\BOOKMARK [3][-]{subsubsection.4.4.5}{Step 5:}{subsection.4.4}% 28
+\BOOKMARK [3][-]{subsubsection.4.4.6}{Step 6:}{subsection.4.4}% 29
+\BOOKMARK [3][-]{subsubsection.4.4.7}{Step 7:}{subsection.4.4}% 30
+\BOOKMARK [2][-]{subsection.4.5}{Further Investigations}{section.4}% 31
+\BOOKMARK [1][-]{section.5}{Time Management and Milestones}{}% 32
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 33

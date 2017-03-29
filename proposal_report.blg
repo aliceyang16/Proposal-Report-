@@ -1,19 +1,14 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: proposal_report.aux
-The style file: witseie.bst
+The style file: IEEEtran.bst
 Database file #1: standard.bib
-Warning--empty journal in Mahendran2011
-Warning--there's a number but no volume in Center2002
-Warning--can't use both volume and number fields in Boyd2010
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in JoshuaCongfuHe2007
 Warning--missing publisher in Boyd2010
 Warning--empty journal in Jolliffe2016
 Warning--empty journal in Zhang2012
-Warning--empty year in saha_classifying_2016
-Warning--empty year in jyothi_congenital_2016
-Warning--empty year in multiple_classification
-Warning--empty journal in intrator_feature_1992
-Warning--empty year in intrator_feature_1992
-Warning--empty year in neagoe_new_2014
-Warning--empty year in kottaimalai_eeg_2013
-Warning--empty journal in meyer_physicians_2013
-Warning--empty year in meyer_physicians_2013
-(There were 15 warnings)
+Warning--empty journal in Oukrich2016
+
+Done.
+(There were 5 warnings)

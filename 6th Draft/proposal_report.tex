@@ -1,109 +1,28 @@
-\documentclass[11pt]{article}
-\usepackage[english]{babel}
-\usepackage{KJN}
-\usepackage{caption}
-\usepackage{pdfpages}
-\usepackage{pdflscape}
-\usepackage{subcaption}
+\documentclass[11pt,twocolumn]{witseiepaper}
+\RequirePackage{ifpdf}
 \usepackage{amsmath}
-\usepackage[margin=1.35in]{geometry}
-\setlength{\parindent}{0em}
-\setlength{\parskip}{1em}
 \usepackage{amssymb}
-\usepackage{microtype}
-\usepackage{palatino}
+\usepackage{KJN}
+\usepackage{pdfpages}
+\renewcommand*{\bibfont}{\small}
+
+\ifpdf
+\pdfinfo{
+	/Title (Research Proposal)
+	/Author (Alice Yang (597609))
+}
+\fi
 
 \begin{document}
-
-	\begin{titlepage}
-		
-		\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
-		
-		\center % Center everything on the page
-		
-		%----------------------------------------------------------------------------------------
-		%   HEADING SECTIONS
-		%----------------------------------------------------------------------------------------
-		
-		\textsc{\LARGE University of the Witwatersrand, Johannesburg, South Africa}\\[1.5cm] % Name of your university/college
-		%\textsc{\Large Johannesburg, South Africa}\\[0.5cm] % Major heading such as course name
-		\textsc{\large MSc Research Proposal}\\[0.5cm] % Minor heading such as course title
-		
-		%----------------------------------------------------------------------------------------
-		%   TITLE SECTION
-		%----------------------------------------------------------------------------------------
-		
-		\HRule \\[0.4cm]
-		{ \huge \bfseries Dimensionality Reduction Techniques in Pattern Recognition with Different Types of X-ray Images}\\[0.4cm] % Title of your document
-		\HRule \\[1.5cm]
-		
-		%----------------------------------------------------------------------------------------
-		%   AUTHOR SECTION
-		%----------------------------------------------------------------------------------------
-		
-		\begin{minipage}{0.4\textwidth}
-			\begin{flushleft} \large
-				\emph{Author:}\\
-				Alice Y. \textsc{Yang} % Your name
-			\end{flushleft}
-		\end{minipage}
-		~
-		\begin{minipage}{0.4\textwidth}
-			\begin{flushright} \large
-				\emph{Supervisor:} \\
-				Prof. Ling \textsc{Cheng} \\ % Supervisor's Name
-			\end{flushright}
-		\end{minipage}\\[2cm]
-		
-		% If you don't want a supervisor, uncomment the two lines below and remove the section above
-		%\Large \emph{Author:}\\
-		%John \textsc{Smith}\\[3cm] % Your name
-		
-		
-		%----------------------------------------------------------------------------------------
-		%   LOGO SECTION
-		%----------------------------------------------------------------------------------------
-		
-		\includegraphics[width=0.33\textwidth]{eie.png} % Include a department/university logo - this will require the graphicx package
-		
-		%----------------------------------------------------------------------------------------
-		
-		%----------------------------------------------------------------------------------------
-		%   SCHOOL OR DEPARTMENT AND RESEARCH GROUP
-		%----------------------------------------------------------------------------------------
-		\vfill
-		
-		%\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of }\\[0.3cm] % University requirement text
-		%\textit{in the}\\[0.4cm]
-		CeTAS\\ School of Electrical \& Information Engineering\\[2cm] % Research group name and department name
-		
-		\vfill
-		
-		%----------------------------------------------------------------------------------------
-		%   DATE SECTION
-		%----------------------------------------------------------------------------------------
-		
-		{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
-		
-		\vfill % Fill the rest of the page with whitespace
-		
-	\end{titlepage}
-
-	\begin{abstract}
-		This paper proposes a research in determining the optimal dimensionality reduction technique for a two-step system for bone fracture detection. The two-step system consists of a dimensionality reduction technique and a neural network component. In addition, an image pre-processing module is to be implemented. The module produces 26 different processed images from the original image. Furthermore, the pre-processing module extracts three features, namely gradient, lines and contours. The dimensionality reduction techniques proposed for comparison are Principal Component Analysis (PCA), Kernel Principal Component Analysis (KPCA) and Maximum Variance Unfolding (MVU). The proposed training technique for the neural network is back-propagation. To determine the optimal dimensionality reduction technique, the performance for each technique is compared. The performance is based on high detection accuracy, low error rate and execution time. Further investigation will be conducted to extend the two-step system for the detection of Tuberculosis disease (TB) as well as exending it to the manufacturing field. In the manufacturing field, the system can be utilized to detect fractures or inconsistancies within the manufactured components.
-	\end{abstract}
+	\title{Masters Research Proposal - Dimensionality reduction techniques in pattern recognition with different types of x-ray images }
 	
-	\vspace*{\fill}
+	\author{Alice Yang (597609) \thanks{School of Electrical and Information Engineering, University of the Witwatersrand, Private Bag 3, 2050, Johannesburg, South Africa} }
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\abstract{This paper proposes a research in determining the optimal dimensionality reduction technique for a two-step system for bone fracture detection. The two-step system consists of a dimensionality reduction technique and a neural network component. In addition, an image pre-processing module is to be implemented. The module produces 26 different processed images from the original image. Furthermore, the pre-processing module extracts three features, namely gradient, lines and contours. The dimensionality reduction techniques proposed for comparison are Principal Component Analysis (PCA), Kernel Principal Component Analysis (KPCA) and Maximum Variance Unfolding (MVU). The proposed training technique for the neural network is back-propagation. To determine the optimal dimensionality reduction technique, the performance for each technique is compared. The performance is based on high detection accuracy, low error rate and execution time. Further investigation will be conducted to extend the two-step system for the detection of Tuberculosis disease (TB) as well as exending it to the manufacturing field. In the manufacturing field, the system can be utilized to detect fractures or inconsistancies within the manufactured components.}
+	
+	\keywords{Dimensionality Reduction Techniques, Back-Propagation Neural Network, Bone Fracture Detection, Two-Step System, Principal Component Analysis, Kernel Principal Component Analysis, Maximum Variance Unfolding}
+	\maketitle
 	\thispagestyle{empty}\pagestyle{empty}
-	
-	\newpage
-	\setcounter{page}{1}
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\thispagestyle{plain}\pagestyle{plain}
-	%\newgeometry{left=0.8in,right=0.8in,top=1in,bottom=1in}
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	\section{Introduction}
 	In the medical field there is an emphasis on the importance of medical diagnosis. In critical cases, an inaccurate diagnosis of a symptom can cost a patient's life. Most diagnoses are performed by trained medical doctors, however they are prone to making mistakes which can be influenced by external factors such as fatigue and lack of training in the particular field. Automation of medical diagnosis was introduced in the early 1970s \cite{Ramesh2004}. There are many algorithms available designed with the aim of diagnosing patients. The basic algorithm consists of "if... then..." statements. Although the algorithm is simple, the list of conditions in the medical field are endless and as a result the execution time to diagnosis a patient's symptoms is not realistic. 
@@ -129,7 +48,7 @@
 	
 	There are various standard classifiers implemented for automating the detection of bone fractures using x-ray images. \cite{Mahendran2012} describes a study done to test the performance of single and combination classifiers. The classifiers used in the study are Back-Propagation Neural Network (BPNN), Support Vector Machine (SVM) and Na\"{i}ve Bayes (NB) classifiers. Contrast, Homogeneity, Energy, Entropy, Mean, Variance, Standard Deviation Correlation, Gabor orientation (GO), Markov Random Field (MRF) and intensity gradient direction (IGD) are features exacted for testing each classifier. The metrics used to evaluate the performance of each classifier are sensitivity, specificity, positive predictive value, negative predictive value, accuracy and execution time. The authors discovered that fusion classifiers enhances the detection capacity. Furthermore, the results indicated that the combination of SVM and BPNN obtained the best performance.
 	
-	\cite{mahendran_Enhanced} proposes a four-step system that makes use of fusion-classification techniques to automated the detection of bone fracture specifically for leg bones (Tibia). The four-steps are preprocessing, segmentation, feature extraction and bone detection. The three classifiers during the fusion classification are Feed Forward Back-Propagation Neural Network (BPNN), Support Vector Machine (SVM) and Na\"{i}ve Bayes Classifiers (NB). Through experimentation, the authors stated that the proposed four-step system showed significant improvement in terms of detection rate and speed of classification.
+	\cite{Mahendran_Enhanced} proposes a four-step system that makes use of fusion-classification techniques to automated the detection of bone fracture specifically for leg bones (Tibia). The four-steps are preprocessing, segmentation, feature extraction and bone detection. The three classifiers during the fusion classification are Feed Forward Back-Propagation Neural Network (BPNN), Support Vector Machine (SVM) and Na\"{i}ve Bayes Classifiers (NB). Through experimentation, the authors stated that the proposed four-step system showed significant improvement in terms of detection rate and speed of classification.
 	
 	In \cite{ComputerAidedBoneFractureDetection}, the authors proposed a system based on Artificial Neural Network (ANN) for the detection of bone fractures. The system is designed to accept X-ray images as its input. The images are then enhanced using pre-processing techniques. The ANN module is trained using the enhanced x-ray images. "\textit{True Detection Rate}" and "\textit{False Detection Rate}" are used to evaluate the performance of the system. The results that authors obtained for the proposed system indicated that the system had a 89\% success rate.
 	
@@ -166,10 +85,10 @@
 	\phi(\textbf{Y}) = \frac{\textbf{Y}^{T}\textbf{AY}}{\textbf{Y}^{T}\textbf{BY}}
 	\label{eq: general objective function}
 	\end{equation}
-	The function expressed in the form of equation \eqref{eq: general objective function} can be easily optimized by solving a generalized eigenproblem. Convex dimensionality reduction techniques can be subdivided into techniques that perform eigendecomposition on full and sparse matrix. The following section focuses on the eigendecomposition of full matrices. 
+	The function expressed in the form of \eqref{eq: general objective function} can be easily optimized by solving a generalized eigenproblem. Convex dimensionality reduction techniques can be subdivided into techniques that perform eigendecomposition on full and sparse matrix. The following section focuses on the eigendecomposition of full matrices. 
 	
 	\subsubsection{Principal Component Analysis and Classical Scaling}
-	Principal Component Analysis (PCA) is a linear technique that performs dimensionality reduction through the process of embedding the data into a linear subspace of low-dimensionality. The low-dimensional representation of the data describes the variance of the data \cite{Jolliffe2016}. During the construction of the low-dimensional representation, PCA does not discard information, instead it creates new characteristics to represent the original characteristics. This is done by searching for characteristics that show the largest variation. Additionally, PCA searches for characteristics that allows for the reconstruction of the original characteristics from the new characteristics. According to \cite{van2009dimensionality}, maximizing the variance will result in minimizing the error. Hence, the construction of the low-dimensional representation is obtained by determining mapping function,  \textbf{M}, which maximizes the cost function. The cost function is expressed in equation \eqref{eq: scaling cost function}.
+	Principal Component Analysis (PCA) is a linear technique that performs dimensionality reduction through the process of embedding the data into a linear subspace of low-dimensionality. The low-dimensional representation of the data describes the variance of the data \cite{Jolliffe2016}. During the construction of the low-dimensional representation, PCA does not discard information, instead it creates new characteristics to represent the original characteristics. This is done by searching for characteristics that show the largest variation. Additionally, PCA searches for characteristics that allows for the reconstruction of the original characteristics from the new characteristics. According to \cite{van2009dimensionality}, maximizing the variance will result in minimizing the error. Hence, the construction of the low-dimensional representation is obtained by determining mapping function,  \textbf{M}, which maximizes the cost function. The cost function is expressed in \eqref{eq: scaling cost function}.
 	\begin{equation}
 	\phi(\textbf{Y}) = \sum_{ij}(d_{ij}^{2} - ||\textbf{y}_i - \textbf{y}_j||^2)
 	\label{eq: scaling cost function}
@@ -178,14 +97,14 @@
 	
 	$||\textbf{y}_i - \textbf{y}_j ||^{2}$ = squared Euclidean distance between low-dimensional datapoints $\textbf{y}_i$ and $\textbf{y}_j$
 	
-	Eigenvectors and eigenvalues are solved using the eigenproblem expressed in equation \eqref{eq: eigenproblem}. Eigenvectors and eigenvalues are crucial in PCA since eigenvectors assist with determining the correlation between the data points whilst eigenvalues, $\lambda$ dictates the weighted average of the variance for any projection.
+	Eigenvectors and eigenvalues are solved using the eigenproblem expressed in \eqref{eq: eigenproblem}. Eigenvectors and eigenvalues are crucial in PCA since eigenvectors assist with determining the correlation between the data points whilst eigenvalues, $\lambda$ dictates the weighted average of the variance for any projection.
 	\begin{equation}
 	cov(\textbf{X})\textbf{M} = \lambda\textbf{M}
 	\label{eq: eigenproblem}
 	\end{equation}
 	The disadvantage with PCA is that the size of the covariance matrix is dependent on the dimensionality of the original dataset. This means that the size of the covariance matrix is proportional to the number of dimensionalities presented by the dataset, which can result in the inability to compute eigenvectors for very high-dimensional datasets \cite{van2009dimensionality}.
 	
-	Classical Scaling is an identical technique to PCA, however Classical Scaling searches for the linear mapping  function, \textbf{M}, that minimizes the cost function that is expressed in equation \eqref{eq: scaling cost function}. Furthermore, the low-dimensional representation is of the Gram Matrix in which the double-centering pairwise squared Euclidean distance matrix entries are obtained using equation \eqref{gram_enteries}.
+	Classical Scaling is an identical technique to PCA, however Classical Scaling searches for the linear mapping  function, \textbf{M}, that minimizes the cost function that is expressed in \eqref{eq: scaling cost function}. Furthermore, the low-dimensional representation is of the Gram Matrix in which the double-centering pairwise squared Euclidean distance matrix entries are obtained using \eqref{gram_enteries}.
 	\begin{equation}
 	k_{ij} = -\frac{1}{2}(d_{ij}^{2}-\frac{1}{n}\sum_{l}d_{il}^{2} - \frac{1}{n}\sum_{l}d_{jl}^{2} + \frac{1}{n^2}\sum_{lm}d_{lm}^{2})
 	\label{gram_enteries}
@@ -194,13 +113,13 @@
 
 	$d_{ij}^2, d_{il}^2, d_{jl}^2, d_{lm}^2$ are Squared pairwise Euclidean distances.
 	
-	The disadvantage for both PCA and Classical Scaling is the cost function in equation \eqref{eq: scaling cost function} focuses on retaining large pairwise distances, $d_{ij}^2$, whereas retaining the small pairwise distance can be important for minimizing error.
+	The disadvantage for both PCA and Classical Scaling is the cost function in \eqref{eq: scaling cost function} focuses on retaining large pairwise distances, $d_{ij}^2$, whereas retaining the small pairwise distance can be important for minimizing error.
 	
 	\subsubsection{Isomap}
 	Unlike PCA and Classical Scaling where the aim of the techniques is to retain the pairwise Euclidean distances, the Isomap technique attempts to preserve the pairwise geodesic distances between data points \cite{Zhang2012}. This means that the geodesic distance between $x_i$ and $x_j$ imitates as much of the Euclidean between the low-dimensional representation $y_i$ and $y_j$ as possible. The low-dimensional representation $y_i$ and $y_j$ are computed using the classical scaling technique, which results in a pairwise geodesic distance matrix. The drawback of the Isomap technique is that it constructs erroneous connections in the neighbourhood graph, G, which can affect the performance of the Isomap. The neighbourhood graph is a method which constructs a mapping scheme for non-linear dimensional reduction techniques \cite{Aeini2014}.
 	
 	\subsubsection{Kernel PCA}
-	Kernel Principal Component Analysis (KPCA) is a technique that makes use of kernel functions to map data into high dimensional space. The space is manipulated using linear PCA \cite{Cui2012}. KPCA makes use of a mapping function which computes the kernel matrix, $K$ of data points $x_i$ and $x_j$. The entries for the kernel matrix are defined by equation \eqref{eq: kernel matrix enteries}.
+	Kernel Principal Component Analysis (KPCA) is a technique that makes use of kernel functions to map data into high dimensional space. The space is manipulated using linear PCA \cite{Cui2012}. KPCA makes use of a mapping function which computes the kernel matrix, $K$ of data points $x_i$ and $x_j$. The entries for the kernel matrix are defined by \eqref{eq: kernel matrix enteries}.
 	\begin{equation}
 		k_{ij} = K(x_i, x_j)
 		\label{eq: kernel matrix enteries}
@@ -210,7 +129,7 @@
 		K &= \text{kernel function}\\
 		x_i \text{ and } x_j &= \text{input data points}
 	\end{align*}
-	The features defined by the kernel function have a zero-mean. Additionally, the eigenvectors of the covariance matrix, $\textbf{a}_i$, which is expressed in equation \eqref{eq: kernel covariance matrix} can be computed, since the eigenvectors of the kernel matrix are related. 
+	The features defined by the kernel function have a zero-mean. Additionally, the eigenvectors of the covariance matrix, $\textbf{a}_i$, which is expressed in \eqref{eq: kernel covariance matrix} can be computed, since the eigenvectors of the kernel matrix are related. 
 	\begin{equation}
 		\textbf{a}_i = \frac{1}{\sqrt{\lambda_i}} \textbf{v}_i
 		\label{eq: kernel covariance matrix}
@@ -220,7 +139,7 @@
 		\textbf{v}_i &= \text{eigenvector} \\
 		\lambda_i &= \text{eigenvalue}\\
 	\end{align*}
-	The low-dimensional representation is obtained by the projection given by equation \eqref{eq: kernel low-dimensional}.
+	The low-dimensional representation is obtained by the projection given by \eqref{eq: kernel low-dimensional}.
 	\begin{equation}
 		\textbf{y}_i = \left\{ \sum_{j = 1}^{n}a_1^{(1)}K(\textbf{X}_j, \textbf{X}_i), ... , \sum_{j = 1}^{n}a_d^{(j)}K(\textbf{X}_j, \textbf{X}_i) \right\}
 		\label{eq: kernel low-dimensional}
@@ -232,7 +151,7 @@
 	A disadvantage with KPCA is that the size of the kernel matrix is proportional to the square number of instances in the dataset. However despite the obvious disadvantages, KPCA is applied to facial recognition, speech recognition and novelty detection \cite{van2009dimensionality}.
 	
 	\subsubsection{Maximum Variance Unfolding}
-	Maximum Variance Unfolding (MVU) is a technique that aims to preserve as much of the distances and angles between nearby points as possible by studying the kernel matrix. As a result it forms a neighbourhood graph, $G$ \cite{Jiang2011}. A quadratic equation is formulated for the "unfolding" transformation. The "unfolding" transformation is where MVU maximizes the sum of the squared Euclidean distances between all the data points whilst preserving the distances within neighbouring points. This can be described in equation \eqref{eq: optimization problem}.
+	Maximum Variance Unfolding (MVU) is a technique that aims to preserve as much of the distances and angles between nearby points as possible by studying the kernel matrix. As a result it forms a neighbourhood graph, $G$ \cite{Jiang2011}. A quadratic equation is formulated for the "unfolding" transformation. The "unfolding" transformation is where MVU maximizes the sum of the squared Euclidean distances between all the data points whilst preserving the distances within neighbouring points. This can be described in \eqref{eq: optimization problem}.
 	\begin{equation}
 		\text{Max } \sum_{ij}||\textbf{y}_i - \textbf{y}_j||^{2}
 		\label{eq: optimization problem}
@@ -257,7 +176,7 @@
 	From the first condition $\textbf{K} \geq 0$, it indicates that matrix $\textbf{K}$ is required to be positive semi-definite, since SDP is convex. Thus the low-dimensional representation is obtained by solving the SDP. The main weakness found in MVU is the addition of constraints during optimization, which can result in unsuccessful unfolding of the manifold. Despite this main weakness it is applied to sensor location and DNA micro-array data analysis \cite{van2009dimensionality}.
 	
 	\subsubsection{Diffusion Maps}
-	Diffusion Maps (DM) is a technique based on defining a Markov Random Walk graph \cite{COIFMAN20065}. A Markov Random Walk is a description of a random process that consists of the successful random steps applied to a mathematical space. The measurement for the proximity of the data points is attained by performing the random walk for a number of iterations. Through the number of iterations, the diffusion distances are obtained which are used for the representation of the data in the lower dimension. The purpose of the diffusion distance is to integrate over all the paths presented in the graph. For the construction of the diffusion maps graph, the weights of the edges are computed using the Gaussian kernel function. The entries to form matrix \textbf{W} is expressed in equation \eqref{eq: W entries}.
+	Diffusion Maps (DM) is a technique based on defining a Markov Random Walk graph \cite{COIFMAN20065}. A Markov Random Walk is a description of a random process that consists of the successful random steps applied to a mathematical space. The measurement for the proximity of the data points is attained by performing the random walk for a number of iterations. Through the number of iterations, the diffusion distances are obtained which are used for the representation of the data in the lower dimension. The purpose of the diffusion distance is to integrate over all the paths presented in the graph. For the construction of the diffusion maps graph, the weights of the edges are computed using the Gaussian kernel function. The entries to form matrix \textbf{W} is expressed in \eqref{eq: W entries}.
 	\begin{equation}
 		w_{ij} = e^{-\frac{||\textbf{x}_i - \textbf{x}_j||^2}{2\sigma^2}}
 		\label{eq: W entries}
@@ -267,12 +186,12 @@
 		\sigma &= \text{variance of the Gaussian}\\
 		x_i, x_j &= \text{input data points}
 	\end{align*}
-	The normalization of matrix, \textbf{W} is necessary to defining the forward transition probability matrix of dynamic process. The normalized matrix, \textbf{W} results in matrix, $\textbf{P}^{(1)}$ which is formed using equation \eqref{eq: probability transition}.
+	The normalization of matrix, \textbf{W} is necessary to defining the forward transition probability matrix of dynamic process. The normalized matrix, \textbf{W} results in matrix, $\textbf{P}^{(1)}$ which is formed using \eqref{eq: probability transition}.
 	\begin{equation}
 		p_{ij}^{(1)} = \frac{w_{ij}}{\sum_{k}w_{ik}}
 		\label{eq: probability transition}
 	\end{equation}
-	By making use of the probability matrix for $t$ iterations, $\textbf{P}^{(t)}$, the diffusion distance can be defined in equation \eqref{eq: diffusion distance}.
+	By making use of the probability matrix for $t$ iterations, $\textbf{P}^{(t)}$, the diffusion distance can be defined in \eqref{eq: diffusion distance}.
 	\begin{equation}
 		D^{(t)}(\textbf{x}_i, \textbf{x}_j) = \sqrt{\sum_{k}\frac{(p_{ik}^{(t)}-p_{jk}^{(t)})^2}{\psi(\textbf{x}_k)^{(0)}}}
 		\label{eq: diffusion distance}
@@ -283,12 +202,12 @@
 	\end{align*}
 	$m_i$ is the degree of the node, $\textbf{x}_i$ and can be further defined as follows:
 	\[m_i = \sum_{j}p_{ij}\]
-	The eigenproblem in which diffusion maps solves is expressed in equation \eqref{eq: diffusion eigenproblem}. 
+	The eigenproblem in which diffusion maps solves is expressed in \eqref{eq: diffusion eigenproblem}. 
 	\begin{equation}
 		\textbf{P}^{(t)}\textbf{v} = \lambda\textbf{v}
 		\label{eq: diffusion eigenproblem}
 	\end{equation}
-	Since the graph is fully connected, the largest eigenvalue is trivial, therefore the corresponding eigenvalue is discarded. The low dimensional representation can be expressed in equation \eqref{eq: low-dimension diffusion}.
+	Since the graph is fully connected, the largest eigenvalue is trivial, therefore the corresponding eigenvalue is discarded. The low dimensional representation can be expressed in \eqref{eq: low-dimension diffusion}.
 	\begin{equation}
 		\textbf{Y} = \left\{\lambda_2\textbf{v}_2, \lambda_3\textbf{v}_3,...,\lambda_{d+1}\textbf{v}_{d+1} \right\}
 		\label{eq: low-dimension diffusion}
@@ -305,7 +224,7 @@
 	The goal of supervised learning is to create a mapping function, such that when given new input data a prediction of the output data can be made. The mapping function is generated using given data sets that consist of inputs with their corresponding outputs. Linear Regression, Random Forest and Support Vector Machine are popular supervised algorithms.
 	
 	\subsubsection{Na\"{i}ve Bayes}
-	Na\"{i}ve Bayes (NB) is a simple classifier that is based on Bayes' theorem, in which the assumption is made that all the features are conditionally independent given the class label in equation \eqref{eq: NB class label} \cite{Murphy2006}. 
+	Na\"{i}ve Bayes (NB) is a simple classifier that is based on Bayes' theorem, in which the assumption is made that all the features are conditionally independent given the class label in \eqref{eq: NB class label} \cite{Murphy2006}. 
 	\begin{equation}
 		\label{eq: NB class label}
 		p(x | y = c) = \prod_{i = 1}^{D}p(x_i | y = c)
@@ -327,19 +246,19 @@
 	\newline
 	There $n$ input expressed as
 	\newline
-	$X = \left\{X_1, X_2, ... , X_i, ..., X_n\right\}$, the hidden layer nodes are expressed by $H = \left\{H_1, H_2, ... , H_h\right\}$ and a set of $m$ output vector is expressed as $Y = \left\{Y_1, Y_2, ... , Y_j, ... , Y_m\right\}$. Therefore, for each node within the hidden layer, the net input, $net_{k}$ can be expressed in equation \eqref{eq: net input}.
+	$X = \left\{X_1, X_2, ... , X_i, ..., X_n\right\}$, the hidden layer nodes are expressed by $H = \left\{H_1, H_2, ... , H_h\right\}$ and a set of $m$ output vector is expressed as $Y = \left\{Y_1, Y_2, ... , Y_j, ... , Y_m\right\}$. Therefore, for each node within the hidden layer, the net input, $net_{k}$ can be expressed in \eqref{eq: net input}.
 	\begin{equation}
 		\label{eq: net input}
 		net_{k} = \sum_{i = 0}^{n} w_{ik} X_i
 	\end{equation}
 	where $w$ is the weight.
 	\newline
-	The output is computed by applying the logistic function to the net input. Thus the output of each hidden layer node is expressed in equation \eqref{eq: logisitic output}.
+	The output is computed by applying the logistic function to the net input. Thus the output of each hidden layer node is expressed in \eqref{eq: logisitic output}.
 	\begin{equation}
 		\label{eq: logisitic output}
 		Out_{net_k} = \frac{1}{1 + e^{-net_k}}
 	\end{equation}
-	The outputs of the output nodes can be computed in a similar manner. The objective of the back-propagation algorithm is to minimize the error of the output by adjusting the weight values. To calculate the total error equation \eqref{eq: Error} is used.
+	The outputs of the output nodes can be computed in a similar manner. The objective of the back-propagation algorithm is to minimize the error of the output by adjusting the weight values. To calculate the total error \eqref{eq: Error} is used.
 	\begin{equation}
 		\label{eq: Error}
 		e_j(t) = \frac{1}{2} \sum_{j = 1}^{m} (output - target)^2
@@ -360,7 +279,7 @@
 	\vspace{-3mm}
 	\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.43]{system_overview_2.png}
+		\includegraphics[scale=0.23]{system_overview_2.png}
 		\caption{Block Diagram illustrating an overview of the system with image pre-processing }
 		\label{fig:system overview}
 	\end{figure}
@@ -374,7 +293,7 @@
 		\centering
 		\caption{Table showing the resultant images produced by image pre-processing module along with the pixel size of each image}
 		\label{tb: image table}
-		\begin{tabular}{| l | c |}
+		\begin{tabular}{| p{5.5cm} | c |}
 			\hline
 			Image (jpg file) & Pixel Size \\
 			\hline \hline
@@ -414,33 +333,33 @@
 		\centering
 		\caption{Table showing dimensions of the extracted features from i\_cannyx3.jpg image, where $N_g$ is the total number of values for gradient, $N_l$ is the total number of values for lines and $N_c$ is the total number of values for contours.}
 		\label{feature_selection}
-		\begin{tabular}{|l|l|l|}
+		\begin{tabular}{|l|p{2cm}|l|}
 			\hline
 			Features & Dimensions & Description \\
 			\hline \hline
-			gradient & $2 \times N_g $ & hough line value, angle (in degrees)\\
+			gradient & $2 \times N_g $ & hough line value, \\
+			& & angle (in degrees)\\
 			\hline
-			lines    & $4 \times N_l $ & $x_{1}$, $y_{1}$, $x_{2}$, $y_{2}$ \\
+			lines    & $4 \times N_l $ & $x_{1}$, $y_{1}$ \\
+			& & $x_{2}$, $y_{2}$ \\
 			\hline
 			contours & $2 \times N_c $  & $x$ and $y$ values \\
 			\hline
 		\end{tabular}
 	\end{table}
 	
-	\newpage
 	\subsection{Data Structure}
-	The data structure for one original x-ray image is constructed from the 26 resultant images from the image pre-processing module. Furthermore, the three extracted features namely, gradient, lines and contours are utilized for the construction. A simplified graphical representation for the structure of one image (out of the 26 images) is shown in Figure \ref{fig: second_structure}. 
+	The data structure for one original x-ray image is constructed from the 26 resultant images from the image pre-processing module. Furthermore, the three extracted features namely, gradient, lines and contours are utilized for the construction. A simplified graphical representation for the structure of one image (out of the 26 images) is shown in Figure \ref{fig: second_structure}. Figure \ref{fig: data_structure} illustrates the data structure constructed with all 26 images along with the three extracted features.
 	\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.35]{second_structure.png}
+		\includegraphics[scale=0.23]{second_structure.png}
 		\caption{Simplified data structure for one pre-processed image}
 		\label{fig: second_structure}
 	\end{figure}
 
-	Figure \ref{fig: data_structure} illustrates the data structure constructed with all 26 images along with the three extracted features.
 	\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.3]{image_processing.png}
+		\includegraphics[scale=0.23]{image_processing.png}
 		\caption{Data structure for all 26 pre-processed images to represent the original image}
 		\label{fig: data_structure}
 	\end{figure}
@@ -450,7 +369,7 @@
 	The first step is to determine the covariance matrix for original x-ray data. The covariance matrix is then used to determine the principal components. The number of principal components is proportional to the number of variables, $n$ within that dataset. The resultant principal components, $P_n$ are computed by determining the eigenvalues of the covariance matrix. The covariance matrix is in a symmetrical form. The eigenvalues found in the covariance matrix are the variances of the principal components. Since the number of principal component are proportional to the number of variables within an image, this means that there are $n$ eigenvalues. All eigenvalues, $\lambda$ are greater than or equal to zero. The largest eigenvalue corresponds to the first principal component. This applies to the next eigenvalue, until the i-th principal component. Therefore $\lambda_i$ corresponds to the i-th eigenvector.
 	
 	\begin{itemize}
-		\item Step 1: The first step is to determine the covariance matrix for each original x-ray image, which has a three dimensional structure. Let the three dimensions be represented by $x$, $y$ and $z$. Thus the covariance matrix, $C$ can be expressed in equation \eqref{eq: covariance matrix}.
+		\item Step 1: The first step is to determine the covariance matrix for each original x-ray image, which has a three dimensional structure. Let the three dimensions be represented by $x$, $y$ and $z$. Thus the covariance matrix, $C$ can be expressed in \eqref{eq: covariance matrix}.
 		\begin{equation}
 		\label{eq: covariance matrix}
 		C = 
@@ -462,7 +381,7 @@
 		\end{equation}
 		
 		The result of $cov(x,x)$, $cov(y,y)$ and $cov(z,z)$ are eigenvalues of matrix $C$ which are the variances of the principal component.\\
-		\item Step 2: The eigenvectors $v_1, v_2, v_3, ... , v_i$ corresponding to the eigenvalues \newline $\lambda_1, \lambda_2, \lambda_3, ... , \lambda_i$ are calculated. Assuming that the eigenvalues are in descending order such that: $\lambda_1 \geq \lambda_2 \geq \lambda_3, \geq, ...,\geq \lambda_i$, then $\lambda_1$ is the first principal component and $v_1$ consists of the main characteristics for the given data. \\
+		\item Step 2: The eigenvectors $v_1, v_2, v_3, ... , v_i$ corresponding to the eigenvalues $\lambda_1, \lambda_2, \lambda_3, ... , \lambda_i$ are calculated. Assuming that the eigenvalues are in descending order such that: $\lambda_1 \geq \lambda_2 \geq \lambda_3, \geq, ...,\geq \lambda_i$, then $\lambda_1$ is the first principal component and $v_1$ consists of the main characteristics for the given data. \\
 		\item Step 3: The principal components that expresses the 26 images can be expressed as follows:
 		\begin{equation}
 		P_i = \lambda_{i1}Z_1 + \lambda_{i2}Z_2 + ... + \lambda_{in}Z_n
@@ -479,18 +398,18 @@
 	\end{itemize}
 	
 	\subsubsection{Kernel Principal Component Analysis}
-	Kernel Principal Component Analysis (KPCA) is centred around equation \eqref{eq: KPCA centred equation} \cite{Ibrahim_Baharudin2016}.
+	Kernel Principal Component Analysis (KPCA) is centred around \eqref{eq: KPCA centred equation} \cite{Ibrahim_Baharudin2016}.
 	\begin{equation}
 		\label{eq: KPCA centred equation}
 		\frac{1}{N}\sum_{i=1}^{N}\phi(x_i)=0
 	\end{equation}
 	\begin{itemize}
-		\item Step 1: The covariance matrix is determined by equation \eqref{eq: KPCA covariance}, in which it produces a $M \times M$ matrix, where $M$ is the size of the dimensionality.
+		\item Step 1: The covariance matrix is determined by \eqref{eq: KPCA covariance}, in which it produces a $M \times M$ matrix, where $M$ is the size of the dimensionality.
 		\begin{equation}
 			\label{eq: KPCA covariance}
 			C = \frac{1}{N}\sum_{i=1}^{N}\phi(x_i)\phi(x_i)^T
 		\end{equation} \\
-		\item Step 2: The eigenvalues, $\lambda_k$ and eigenvectors, $V_k$ are determined using equation \eqref{eq: KPCA eigenvalues eigenvectors}, in which it can be re-written as equation \eqref{eq: KPCA eigenvalues eigenvector rewritten}.
+		\item Step 2: The eigenvalues, $\lambda_k$ and eigenvectors, $V_k$ are determined using \eqref{eq: KPCA eigenvalues eigenvectors}, in which it can be re-written as \eqref{eq: KPCA eigenvalues eigenvector rewritten}.
 		\begin{equation}
 			\label{eq: KPCA eigenvalues eigenvectors}
 			\frac{1}{N}\sum_{i=1}^{N}\phi(x_i)\left\{\phi(x_i)^TV_k\right\} = \lambda_k V_k
@@ -499,24 +418,24 @@
 			\label{eq: KPCA eigenvalues eigenvector rewritten}
 			V_k = \sum_{i=1}^{N}a_{aki}\phi(x_i)
 		\end{equation} \\
-		\item Step 3: Equation \eqref{eq: KPCA substitution} is the result of substituting $V_kin$ from equation \eqref{eq: KPCA eigenvalues eigenvectors} into equation \eqref{eq: KPCA eigenvalues eigenvector rewritten}.
+		\item Step 3: \eqref{eq: KPCA substitution} is the result of substituting $V_kin$ from \eqref{eq: KPCA eigenvalues eigenvectors} into \eqref{eq: KPCA eigenvalues eigenvector rewritten}.
 		\begin{equation}
 			\label{eq: KPCA substitution}
 			\frac{1}{N}\sum_{i=1}^{N}\phi(x_i)\phi(x_i)^T \sum_{j=1}^{N}a_{kj}\phi(x_j) = \lambda_{k}\sum_{j=1}^{N}a_{ki}\phi(x_i)
 		\end{equation} \\
-		\item Step 4: A kernel function is defined. Let the kernel function be defined by equation \eqref{eq: KPCA kernel function}.
+		\item Step 4: A kernel function is defined. Let the kernel function be defined by \eqref{eq: KPCA kernel function}.
 		\begin{equation}
 			\label{eq: KPCA kernel function}
 			k(x_i, x_j) = \phi(x_i)^T\phi(x_j)
 		\end{equation}\\
-		\item Step 5: Equation \eqref{eq: KPCA multiplied} is obtained by multiplying $\phi(x_l)^T$ to both sides of equation \eqref{eq: KPCA substitution}
+		\item Step 5: \eqref{eq: KPCA multiplied} is obtained by multiplying $\phi(x_l)^T$ to both sides of \eqref{eq: KPCA substitution}
 	\end{itemize}
 	\begin{equation}
 	\label{eq: KPCA multiplied}
 	\frac{1}{N}\sum_{i=1}^{N}(x_l, x_i)\sum_{j=1}^{N}a_{kj}k(x_i, x_j) = \lambda_k\sum_{i=1}^{N}a_{ki}k(x_l, x_i)
 	\end{equation}
 	\begin{itemize}
-		\item Step 6:The notion matrix is expressed in equation \eqref{eq: KPCA notion matrix}.
+		\item Step 6:The notion matrix is expressed in \eqref{eq: KPCA notion matrix}.
 		\begin{equation}
 			\label{eq: KPCA notion matrix}
 			K^2a_k = \lambda N K_{a_k} 
@@ -534,15 +453,15 @@
 			\label{eq: KPCA Kak}
 			Ka_k = \lambda N a_k
 		\end{equation} 
-		\item Step 7: $\phi(x_i)$ does not always have zero-mean in the original space and it cannot be guaranteed that it is centred in the altered space. Therefore it can be used to created the Gram Matrix, $K'$ which can substitute the kernel matrix, $K$. The Gram matrix ensures that $\phi(x_i)$ is centred in the altered space. The Gram matrix is given by equation \eqref{eq: KPCA Gram Matrix} \cite{Ibrahim_Baharudin2016} \cite{Scholkopf2012}.
+		\item Step 7: $\phi(x_i)$ does not always have zero-mean in the original space and it cannot be guaranteed that it is centred in the altered space. Therefore it can be used to created the Gram Matrix, $K'$ which can substitute the kernel matrix, $K$. The Gram matrix ensures that $\phi(x_i)$ is centred in the altered space. The Gram matrix is given by \eqref{eq: KPCA Gram Matrix} \cite{Ibrahim_Baharudin2016} \cite{Scholkopf2012}.
 		\begin{equation}
 			\label{eq: KPCA Gram Matrix}
 			K' = K - 1_N K - 1K1_N + 1_NK1_N
 		\end{equation}
 		where $1_N = N \times N$ matrix in which all elements of the matrix is equal to $\frac{1}{N}$.\\
-		\item Step 8: Dimensionality reduction is performed by constructing the kernel matrix from $K$ in equation \eqref{eq: KPCA notion matrix}. \\
-		\item Step 9: The Gram Matrix is computed using equation \eqref{eq: KPCA Gram Matrix}. \\
-		\item Step 10: Equation \eqref{eq: KPCA Kak} is used to computed the Kernel principal components.
+		\item Step 8: Dimensionality reduction is performed by constructing the kernel matrix from $K$ in \eqref{eq: KPCA notion matrix}. \\
+		\item Step 9: The Gram Matrix is computed using \eqref{eq: KPCA Gram Matrix}. \\
+		\item Step 10: \eqref{eq: KPCA Kak} is used to computed the Kernel principal components.
 	\end{itemize}
 
 	\subsubsection{Maximum Variance Unfolding}
@@ -550,7 +469,7 @@
 	\begin{itemize}
 		\item Step 1: Determine the smallest $k$ integer to construct the k-nearest graph that generates connected training samples, $\textbf{x}_1, . . . ,\textbf{x}_n$ \\
 		\item Step 2: Using training samples, construct an $N \times N$ binary adjacency graph \textbf{S}. \\
-		\item Step 3: Equation \eqref{eq: MVU S setting} determines the values of $\textbf{S}_{ij}$.
+		\item Step 3: \eqref{eq: MVU S setting} determines the values of $\textbf{S}_{ij}$.
 		\begin{equation}
 			\label{eq: MVU S setting}
 			\textbf{S}_{ij} = 
@@ -559,7 +478,7 @@
 				0 & \text{otherwise}
 			\end{cases}
 		\end{equation}
-		\item Step 3: Training the kernel matrix, $K$ by solving equation \eqref{eq: MVU kernel matrix}.
+		\item Step 3: Training the kernel matrix, $K$ by solving \eqref{eq: MVU kernel matrix}.
 		\newline
 		Maximize trace(\textbf{K}) subject to:
 		\begin{equation}
@@ -571,7 +490,7 @@
 			\end{cases}
 		\end{equation}
 		\item Step 4: Eigen-decomposition for $\textbf{K}$ is performed and the reduce dimension is set to the intrinsic dimension, $d$ which is determined by the eigenvalues of $\textbf{K}$.\\
-		\item Step 5: The d-dimensional MVU is computed, which embeds the training samples, $\textbf{y}_1, . . . , \textbf{y}_N$. The training samples can re-written and it is expressed in equation \eqref{eq: MVU training samples}.
+		\item Step 5: The d-dimensional MVU is computed, which embeds the training samples, $\textbf{y}_1, . . . , \textbf{y}_N$. The training samples can re-written and it is expressed in \eqref{eq: MVU training samples}.
 		\begin{equation}
 			\label{eq: MVU training samples}
 			\textbf{y}_i = [\sqrt{\lambda_1}\alpha_1^1, . . . ,\sqrt{\lambda_d}\alpha_i^d]^T
@@ -584,7 +503,7 @@
 	A graphical layout of the neural network is shown in Figure \ref{fig: neural_network}.
 	\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.45]{neural_network.png}
+		\includegraphics[scale=0.25]{neural_network.png}
 		\caption{Neural Network Layout showing the input, hidden and output layers}
 		\label{fig: neural_network}
 	\end{figure}
@@ -652,7 +571,7 @@
 		\centering
 		\caption{Table showing the time management for conducting the proposed research.}
 		\label{time_management}
-		\begin{tabular}{| c | l | p{9.5cm} |}
+		\begin{tabular}{| c | p{2.5cm} | p{4.5cm} |}
 			\hline
 			& Period & Task Description \\
 			\hline \hline
@@ -679,7 +598,7 @@
 		\centering
 		\caption{Table showing the milestones that need to be achieved for the research}
 		\label{tb: milestones}
-		\begin{tabular}{| c | l | p{11cm} |}
+		\begin{tabular}{| c | l | p{5cm} |}
 			\hline 
 			& Date & Task \\
 			\hline \hline
@@ -703,8 +622,7 @@
 			\hline
 		\end{tabular}
 	\end{table}
-	
-	\newpage
+
 	\section{Conclusion}
 	\label{sc: Conclusion}
 	The research proposed in this paper is to determine an optimal dimensionality reduction technique for a two-step system to detect the presence of a bone fracture from an x-ray image. The dimensionality techniques mentioned in the proposed methodology are PCA, KPCA and MVU. The dimensionality reduction technique is implemented in the first step of the system, whilst the second step is a neural network component. The neural network component is trained using back-propagation. The data structure is based on the image pre-processing technique, in which the data structure is constructed from the 26 resultant images as well as the three extracted features, gradient, lines and contours. The optimal dimensionality reduction technique is determined by the performance of each technique. The performance is based on detection accuracy, error rate and execution speed. Additionally, further investigations will be conducted to extend the system to the detection of Tuberculosis disease (TB) as well as the manufacturing field to detect fractures within axle components.
