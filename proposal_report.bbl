@@ -22,40 +22,39 @@
 \BIBdecl
 
 \bibitem{Ramesh2004}
-A.~N. Ramesh, C.~Kambhampati, J.~R.~T. Monson, and P.~J. Drew, ``{Artificial
-  intelligence in medicine},'' \emph{Annals of the Royal College of Surgeons of
+A.~N. Ramesh, C.~Kambhampati, J.~R.~T. Monson, and P.~J. Drew, ``Artificial
+  intelligence in medicine,'' \emph{Ann. of the Royal College of Surgeons of
   England}, vol.~86, no.~5, pp. 334--338, 2004.
 
 \bibitem{Jia_Jiang2006}
 Y.~Jia and Y.~Jiang, ``Active contour model with shape constraints for bone
-  fracture detection,'' in \emph{International Conference on Computer Graphics,
-  Imaging and Visualisation (CGIV'06)}, Jul. 2006, pp. 90--95.
+  fracture detection,'' in \emph{Int. Conf. on Computer Graphics, Imaging and
+  Visualisation (CGIV'06)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, Jul
+  2006, pp. 90--95.
 
 \bibitem{Liang_Pan_Huang_Fan_2010}
 J.~Liang, B.~C. Pan, Y.~H. Huang, and X.~Y. Fan, ``Fracture identification of
-  x-ray image,'' in \emph{2010 International Conference on Wavelet Analysis and
-  Pattern Recognition}, Jul. 2010, pp. 67--73.
+  x-ray image,'' in \emph{2010 Int. Conf. on Wavelet Analysis and Pattern
+  Recognition}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2010.
 
 \bibitem{Donnelley2005}
 M.~Donnelley and G.~Knowles, ``Computer aided long bone fracture detection,''
-  in \emph{Proceedings of the Eighth International Symposium on Signal
-  Processing and Its Applications, 2005}, vol.~1, Feb. 2005, pp. 175--178.
+  in \emph{Proc. of the Eighth Int. Symp. on Signal Processing and Its
+  Applications, 2005}.\hskip 1em plus 0.5em minus 0.4em\relax Association for
+  the Study of Internal Fixation, Feb 2005, pp. 175--178, iSBN 0-7803-9243-4.
 
 \bibitem{Syiam_Aziem_Soliman2004}
 M.~M. Syiam, M.~A. El-Aziem, and M.~E.~M. Soliman, ``Adagen: adaptive interface
-  agent for x-ray fracture detection,'' in \emph{Electrical, Electronic and
-  Computer Engineering, 2004. ICEEC '04. 2004 International Conference on},
-  Sep. 2004, pp. 354--357.
+  agent for x-ray fracture detection,'' vol.~2, no.~3, pp. 354--357, Sep 2004.
 
 \bibitem{Mahendran2011}
 S.~Mahendran and S.~S. Baboo, ``Automatic fracture detection using classifiers-
-  a review,'' \emph{IJCSI International Journal of Computer Science}, vol.~8,
-  no.~1, pp. 340--345, Nov. 2011.
+  a review,'' \emph{IJCSI Int. Journal of Computer Science}, vol.~8, no.~1, pp.
+  340--345, Nov 2011.
 
 \bibitem{Mahendran2012}
-------, ``Ensemble systems for automatic fracture detection,''
-  \emph{International Journal of Engineering and Technology}, vol.~4, no.~1,
-  p.~7, 2012.
+------, ``Ensemble systems for automatic fracture detection,'' \emph{Int.
+  Journal of Engineering and Technology}, vol.~4, no.~1, p.~7, 2012.
 
 \bibitem{mahendran_Enhanced}
 ------, ``An enhanced tibia fracture detection tool using image processing and
@@ -63,143 +62,159 @@ S.~Mahendran and S.~S. Baboo, ``Automatic fracture detection using classifiers-
   Computer Science and Technology}, vol.~11, no.~14, pp. 22--28, 2011.
 
 \bibitem{ComputerAidedBoneFractureDetection}
-Z.~Ekşi, E.~Dandıl, and M.~Çakıroğlu, ``Computer aided bone fracture
-  detection,'' in \emph{2012 20th Signal Processing and Communications
-  Applications Conference (SIU)}, Apr. 2012, pp. 1--4.
+Z.~Ek{\c{s}}i, E.~Dand{\i}l, and M.~{\c{C}}ak{\i}ro{\u{g}}lu, ``Computer aided
+  bone fracture detection,'' in \emph{2012 20th Signal Processing and
+  Communications Applications Conf. (SIU)}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, Apr 2012, pp. 1--4.
 
 \bibitem{lim2004detection}
 S.~E. Lim, Y.~Xing, Y.~Chen, W.~K. Leow, T.~S. Howe, and M.~A. Png, ``Detection
   of femur and radius fractures in x-ray images,'' in \emph{Proc. 2nd Int.
-  Conf. on Advances in Medical Signal and Info. Proc}, vol.~65, 2004.
+  Conf. on Advances in Medical Signal and Info. Proc}, vol.~65.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2004.
 
 \bibitem{JoshuaCongfuHe2007}
-W.~{Joshua Congfu He}, ``Lncs 4673 - hierarchical classifiers for detection of
-  fractures in x-ray images,'' pp. 1--8, 2007.
+J.~C. He, W.~K. Leow, and T.~S. Howe, ``Hierarchical classifiers for detection
+  of fractures in x-ray images,'' pp. 962--969, 2007, iSBN 978-3-540-74271-5.
 
 \bibitem{multiple_classification}
 N.~Umadevi and S.~N. Geethalakshmi, ``Multiple classification system for
-  fracture detection in human bone x-ray images,'' in \emph{2012 Third
-  International Conference on Computing Communication Networking Technologies
-  ({ICCCNT})}, Jul. 2012, pp. 1--8.
+  fracture detection in human bone x-ray images,'' in \emph{2012 3rd Int. Conf.
+  on Computing Communication Networking Technologies ({ICCCNT})}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IEEE, Jul 2012, pp. 1--8.
 
 \bibitem{Li_Liang2016}
 Y.~Li, W.~Liang, Y.~Zhang, H.~An, and J.~Tan, ``Automatic lumbar vertebrae
   detection based on feature fusion deep learning for partial occluded c-arm
-  x-ray images,'' in \emph{2016 38th Annual International Conference of the
-  IEEE Engineering in Medicine and Biology Society (EMBC)}, Aug. 2016, pp.
-  647--650.
+  x-ray images,'' in \emph{2016 38th Annu. Int. Conf. of the IEEE Engineering
+  in Medicine and Biology Society (EMBC)}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2016, pp. 647--650.
 
 \bibitem{Pune2016}
-S.~Khobragade, A.~Tiwari, C.~Y. Patil, and V.~Narke, ``Automatic detection of
+S.~Khobragade, A.~Tiwari, C.~Patil, and V.~Narke, ``Automatic detection of
   major lung diseases using chest radiographs and classification by
-  feed-forward artificial neural network,'' in \emph{2016 IEEE 1st
-  International Conference on Power Electronics, Intelligent Control and Energy
-  Systems (ICPEICES)}, Jul. 2016, pp. 1--5.
+  feed-forward artificial neural network,'' in \emph{2016 IEEE 1st Int. Conf.
+  on Power Electronics, Intelligent Control and Energy Systems
+  (ICPEICES)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, Jul 2016, pp. 1--5.
+
+\bibitem{tan2012computer}
+J.~H. Tan, U.~R. Acharya, C.~Tan, K.~T. Abraham, and C.~M. Lim,
+  ``Computer-assisted diagnosis of tuberculosis: a first order statistical
+  approach to chest radiograph,'' \emph{Journal of medical systems}, vol.~36,
+  no.~5, pp. 2751--2759, 2012.
 
 \bibitem{neagoe_new_2014}
-V.~E. Neagoe and R.~M. Stoica, ``A new neural network-based approach for
+V.-E. Neagoe and R.-M. Stoica, ``A new neural network-based approach for
   automatic annotation of remote sensing imagery,'' in \emph{2014 {IEEE}
-  Geoscience and Remote Sensing Symposium}, Jul. 2014, pp. 1781--1784.
+  Geoscience and Remote Sensing Symp.}\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, Jul 2014, pp. 1781--1784.
 
 \bibitem{Baqqar2012}
 M.~Baqqar, T.~Wang, M.~Ahmed, F.~Gu, J.~Lu, and A.~Ball, ``A general regression
   neural network model for gearbox fault detection using motor operating
-  parameters,'' in \emph{Proceedings of 2012 UKACC International Conference on
-  Control}, Sep. 2012, pp. 584--588.
+  parameters,'' in \emph{Proc. of 2012 UKACC Int. Conf. on Control
+  (CONTROL)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, Sep 2012, pp.
+  584--588.
 
 \bibitem{kottaimalai_eeg_2013}
 R.~Kottaimalai, M.~P. Rajasekaran, V.~Selvam, and B.~Kannapiran, ``{EEG} signal
   classification using principal component analysis with neural network in
-  brain computer interface applications,'' in \emph{2013 {IEEE} International
-  Conference {ON} Emerging Trends in Computing, Communication and
-  Nanotechnology ({ICECCN})}, Mar. 2013, pp. 227--231.
+  brain computer interface applications,'' in \emph{2013 {IEEE} Int. Conf. {ON}
+  Emerging Trends in Computing, Communication and Nanotechnology
+  ({ICECCN})}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2013, pp. 227--231.
 
 \bibitem{intrator_feature_1992}
 N.~Intrator, ``Feature extraction using an unsupervised neural network,''
-  \emph{Neural Computation}, vol.~4, no.~1, pp. 98--107, Jan. 1992.
+  \emph{Neural Computation}, vol.~4, no.~1, pp. 98--107, Jan 1992.
 
 \bibitem{Center2002}
-I.~K.~F. Center, A.~Scienti, and L.~L. N. L. P.~O. Box, ``A survey of dimension
-  reduction techniques,'' \emph{Computing}, no.~1, pp. 1--18, 2002.
+I.~K. Fodor, ``A survey of dimension reduction techniques,'' \emph{Center for
+  Applied Scientific Computing, Lawrence Livermore Nat. Laboratory}, vol.~9,
+  no.~1, pp. 1--18, 2002.
 
 \bibitem{Boyd2010}
-S.~Boyd and L.~Vandenberghe, \emph{Convex Optimization}, 2010, vol.~25, no.~3.
+S.~Boyd and L.~Vandenberghe, \emph{Convex Optimization}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Cambridge university press, 2004.
 
 \bibitem{Jolliffe2016}
-I.~T. Jolliffe, J.~Cadima, and J.~Cadima, ``Principal component analysis : a
-  review and recent developments subject areas : Author for correspondence,''
-  2016.
+I.~T. Jolliffe, J.~Cadima, and J.~Cadima, ``Principal component analysis: a
+  review and recent developments,'' \emph{Phil. Trans. R. Soc. A}, vol. 374,
+  no. 2065, p. 20150202, 2016.
 
 \bibitem{van2009dimensionality}
 L.~Van Der~Maaten, E.~Postma, and J.~Van~den Herik, ``Dimensionality reduction:
   a comparative,'' \emph{J Mach Learn Res}, vol.~10, pp. 66--71, 2009.
 
 \bibitem{Zhang2012}
-Z.~Zhang, S.~Member, T.~W.~S. Chow, and S.~Member, ``M-isomap : Orthogonal
-  constrained marginal isomap for nonlinear dimensionality reduction,'' pp.
-  1--12, 2012.
+Z.~Zhang, T.~W. Chow, and M.~Zhao, ``M-isomap : Orthogonal constrained marginal
+  isomap for nonlinear dimensionality reduction,'' \emph{IEEE Trans. on
+  cybernetics}, vol.~43, no.~1, pp. 180--191, 2013.
 
 \bibitem{Aeini2014}
 F.~Aeini, A.~M.~E. Moghadam, and F.~Mahmoudi, ``Non linear dimensional
   reduction method based on supervised neighborhood graph,'' in
-  \emph{Telecommunications (IST), 2014 7th International Symposium on}, Sep.
-  2014, pp. 35--40.
+  \emph{Telecommunications (IST), 2014 7th Int. Symp. on}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, Sep 2014, pp. 35--40.
 
 \bibitem{Cui2012}
-W.~Cui, S.~Chen, T.~Yu, and L.~Ren, ``{Feature extraction of X-ray chest image
-  based on KPCA},'' \emph{Proceedings of 2nd International Conference on
-  Computer Science and Network Technology, ICCSNT 2012}, pp. 1263--1266, 2012.
+W.~Cui, S.~Chen, T.~Yu, and L.~Ren, ``Feature extraction of x-ray chest image
+  based on kpca,'' in \emph{Proc. of 2nd Int. Conf. on Computer Science and
+  Network Technology, ICCSNT 2012}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 2012, pp. 1263--1266, iSBN 9781467329644.
 
 \bibitem{Jiang2011}
 S.~Jiang, J.~Zhang, and C.~Kuang, ``A linear maximum variance unfolding
-  algorithm and its application in image recognition,'' \emph{2011
-  International Conference on Electric Information and Control Engineering,
-  ICEICE 2011 - Proceedings}, no. 61070137, pp. 36--39, 2011.
+  algorithm and its application in image recognition,'' in \emph{2011 Int.
+  Conf. on Electric Information and Control Engineering, ICEICE 2011 - Proc.},
+  no. 61070137.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2011, pp. 36--39,
+  iSBN 9781424480395.
 
 \bibitem{COIFMAN20065}
 R.~R. Coifman and S.~Lafon, ``Diffusion maps,'' \emph{Applied and Computational
-  Harmonic Analysis}, vol.~21, no.~1, pp. 5 -- 30, 2006.
+  Harmonic Analysis}, vol.~21, no.~1, pp. 5--30, 2006.
 
 \bibitem{Murphy2006}
-K.~P. Murphy, ``Naive bayes classifiers generative classifiers,''
-  \emph{Bernoulli}, vol. 4701, no. October, pp. 1--8, 2006.
+K.~P. Murphy, ``Naive bayes classifiers,'' \emph{University of British
+  Columbiai}, vol. 4701, pp. 1--8, Oct 2006, iSBN 978-0262018029.
 
 \bibitem{saha_classifying_2016}
 S.~Saha, A.~Mahmud, A.~A. Ali, and M.~A. Amin, ``Classifying digital x-ray
-  images into different human body parts,'' in \emph{2016 5th International
-  Conference on Informatics, Electronics and Vision ({ICIEV})}, May 2016, pp.
-  67--71.
+  images into different human body parts,'' in \emph{2016 5th Int. Conf. on
+  Informatics, Electronics and Vision ({ICIEV})}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, May 2016, pp. 67--71.
 
 \bibitem{Rebentrost2014}
-P.~Rebentrost, M.~Mohseni, and S.~Lloyd, ``{Quantum support vector machine for
-  big data classification},'' \emph{Physical Review Letters}, vol. 113, no.~3,
+P.~Rebentrost, M.~Mohseni, and S.~Lloyd, ``Quantum support vector machine for
+  big data classification,'' \emph{Physical Review Letters}, vol. 113, no.~13,
   pp. 1--5, 2014.
 
 \bibitem{jyothi_congenital_2016}
 S.~Jyothi and K.~Vanisree, ``Congenital heart septum defect diagnosis on chest
-  x-ray features using neural networks,'' in \emph{2016 Second International
-  Conference on Computational Intelligence Communication Technology ({CICT})},
-  Feb. 2016, pp. 265--269.
+  x-ray features using neural networks,'' in \emph{2016 2nd Int. Conf. on
+  Computational Intelligence Communication Technology ({CICT})}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, Feb 2016, pp. 265--269.
 
 \bibitem{Oukrich2016}
 N.~Oukrich, A.~Maach, S.~E. Mabrouk, and K.~Bouchard, ``Activity recognition
   using back-propagation algorithm and minimum redundancy feature selection
-  method,'' pp. 818--823, 2016.
+  method.''\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2016, pp. 818--823,
+  iSBN 9781509007516.
 
 \bibitem{Ibrahim_Baharudin2016}
 A.~M. Ibrahim and B.~Baharudin, ``Classification of mammogram images using
   shearlet transform and kernel principal component analysis,'' in \emph{2016
-  3rd International Conference on Computer and Information Sciences (ICCOINS)},
-  Aug 2016, pp. 340--344.
+  3rd Int. Conf. on Computer and Information Sciences (ICCOINS)}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IEEE, Aug 2016, pp. 340--344.
 
 \bibitem{Scholkopf2012}
-B.~Scholkopf, a.~J. Smola, and K.~R. Muller, ``Kernel principal component
+B.~Sch{\"o}lkopf, A.~Smola, and K.-R. M{\"u}ller, ``Kernel principal component
   analysis,'' \emph{Computer Vision And Mathematical Methods In Medical And
-  Biomedical Image Analysis}, vol. 1327, pp. 583--588, 2012.
+  Biomedical Image Analysis}, vol. 1327, pp. 583--588, 1997, iSBN 08997667
+  (ISSN).
 
 \bibitem{Shao2009}
-J.-D. Shao and G.~Rong, ``{Nonlinear process monitoring based on maximum
-  variance unfolding projections},'' \emph{Expert Systems with Applications},
-  vol.~36, no.~8, pp. 11\,332--11\,340, 2009.
+J.-D. Shao and G.~Rong, ``Nonlinear process monitoring based on maximum
+  variance unfolding projections,'' \emph{Expert Systems with Applications},
+  vol.~36, no.~8, pp. 11\,332--11\,340, 2009, iSBN 0957-4174.
 
 \end{thebibliography}

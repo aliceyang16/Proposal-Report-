@@ -1,14 +1,32 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: proposal_report.aux
 The style file: IEEEtran.bst
 Database file #1: standard.bib
+I was expecting a `,' or a `}'---line 29 of file standard.bib
+ :  
+ :  pages={67--73},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 116 of file standard.bib
+ :  
+ :  doi = {10.1109/ICE-CCN.2013.6528498},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 259 of file standard.bib
+ :  
+ :  issn = {1063-5203},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 438 of file standard.bib
+ :  
+ :  doi={10.1109/EMBC.2016.7590785},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in Syiam_Aziem_Soliman2004
 Warning--empty journal in JoshuaCongfuHe2007
-Warning--missing publisher in Boyd2010
-Warning--empty journal in Jolliffe2016
-Warning--empty journal in Zhang2012
-Warning--empty journal in Oukrich2016
+Warning--empty booktitle in Oukrich2016
 
 Done.
-(There were 5 warnings)
+(There were 4 error messages)
