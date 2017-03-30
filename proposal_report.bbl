@@ -103,6 +103,13 @@ J.~H. Tan, U.~R. Acharya, C.~Tan, K.~T. Abraham, and C.~M. Lim,
   approach to chest radiograph,'' \emph{Journal of medical systems}, vol.~36,
   no.~5, pp. 2751--2759, 2012.
 
+\bibitem{kottaimalai_eeg_2013}
+R.~Kottaimalai, M.~P. Rajasekaran, V.~Selvam, and B.~Kannapiran, ``{EEG} signal
+  classification using principal component analysis with neural network in
+  brain computer interface applications,'' in \emph{2013 {IEEE} Int. Conf. {ON}
+  Emerging Trends in Computing, Communication and Nanotechnology
+  ({ICECCN})}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2013, pp. 227--231.
+
 \bibitem{neagoe_new_2014}
 V.-E. Neagoe and R.-M. Stoica, ``A new neural network-based approach for
   automatic annotation of remote sensing imagery,'' in \emph{2014 {IEEE}
@@ -115,13 +122,6 @@ M.~Baqqar, T.~Wang, M.~Ahmed, F.~Gu, J.~Lu, and A.~Ball, ``A general regression
   parameters,'' in \emph{Proc. of 2012 UKACC Int. Conf. on Control
   (CONTROL)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, Sep 2012, pp.
   584--588.
-
-\bibitem{kottaimalai_eeg_2013}
-R.~Kottaimalai, M.~P. Rajasekaran, V.~Selvam, and B.~Kannapiran, ``{EEG} signal
-  classification using principal component analysis with neural network in
-  brain computer interface applications,'' in \emph{2013 {IEEE} Int. Conf. {ON}
-  Emerging Trends in Computing, Communication and Nanotechnology
-  ({ICECCN})}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2013, pp. 227--231.
 
 \bibitem{intrator_feature_1992}
 N.~Intrator, ``Feature extraction using an unsupervised neural network,''
@@ -152,9 +152,9 @@ Z.~Zhang, T.~W. Chow, and M.~Zhao, ``M-isomap : Orthogonal constrained marginal
 
 \bibitem{Aeini2014}
 F.~Aeini, A.~M.~E. Moghadam, and F.~Mahmoudi, ``Non linear dimensional
-  reduction method based on supervised neighborhood graph,'' in
-  \emph{Telecommunications (IST), 2014 7th Int. Symp. on}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, Sep 2014, pp. 35--40.
+  reduction method based on supervised neighborhood graph,'' in \emph{2014 7th
+  Int. Symp. on Telecommunications (IST)}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, Sep 2014, pp. 35--40.
 
 \bibitem{Cui2012}
 W.~Cui, S.~Chen, T.~Yu, and L.~Ren, ``Feature extraction of x-ray chest image
@@ -168,6 +168,11 @@ S.~Jiang, J.~Zhang, and C.~Kuang, ``A linear maximum variance unfolding
   Conf. on Electric Information and Control Engineering, ICEICE 2011 - Proc.},
   no. 61070137.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2011, pp. 36--39,
   iSBN 9781424480395.
+
+\bibitem{weinberger2006introduction}
+K.~Q. Weinberger and L.~K. Saul, ``An introduction to nonlinear dimensionality
+  reduction by maximum variance unfolding,'' in \emph{AAAI}, vol.~6, 2006, pp.
+  1683--1686, iSBN 9781577352815.
 
 \bibitem{COIFMAN20065}
 R.~R. Coifman and S.~Lafon, ``Diffusion maps,'' \emph{Applied and Computational

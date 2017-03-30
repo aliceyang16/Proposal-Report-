@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.12)  29 MAR 2017 21:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.12)  30 MAR 2017 22:32
 entering extended mode
 **proposal_report.tex
 
@@ -544,7 +544,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<eie.png, id=131, 213.6783pt x 213.1965pt>
+<eie.png, id=111, 213.6783pt x 213.1965pt>
 File: eie.png Graphic file (type png)
  <use eie.png>
 Package pdftex.def Info: eie.png used on input line 67.
@@ -570,18 +570,12 @@ been already used, duplicate ignored
 l.120 
        [1] [2] [3] [4]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 158.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 157.
  [5]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 168.
- [6] [7] [8] [9] [10]
-Overfull \hbox (9.15431pt too wide) in paragraph at lines 328--333
-$\OML/cmm/m/it/10.95 X \OT1/cmr/m/n/10.95 = []$\OT1/ppl/m/n/10.95 (-20) , the h
-id-den layer nodes are ex-pressed by $\OML/cmm/m/it/10.95 H \OT1/cmr/m/n/10.95 
-= []$
- []
-
-[11] [12] <system_overview_2.png, id=318, 1011.78pt x 186.6975pt>
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 167.
+ [6] [7] [8] [9] [10] [11] [12]
+<system_overview_2.png, id=301, 1011.78pt x 186.6975pt>
 File: system_overview_2.png Graphic file (type png)
 
 <use system_overview_2.png>
@@ -592,145 +586,157 @@ Overfull \hbox (15.89177pt too wide) in paragraph at lines 364--365
  [][] 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [13 <C:/Users/Trouble Maker/Documents/2017/Witwatersrand/Masters/Proposal Writi
 ng/system_overview_2.png>]
-<second_structure.png, id=330, 672.26157pt x 451.6875pt>
-File: second_structure.png Graphic file (type png)
-
-<use second_structure.png>
-Package pdftex.def Info: second_structure.png used on input line 436.
-(pdftex.def)             Requested size: 235.29507pt x 158.09299pt.
- [14]
-<image_processing.png, id=336, 1057.70157pt x 674.52pt>
-File: image_processing.png Graphic file (type png)
-
-<use image_processing.png>
-Package pdftex.def Info: image_processing.png used on input line 444.
-(pdftex.def)             Requested size: 317.31291pt x 202.35756pt.
- [15 <C:/Users/Trouble Maker/Documents/2017/Witwatersrand/Masters/Proposal Writ
-ing/second_structure.png> <C:/Users/Trouble Maker/Documents/2017/Witwatersrand/
-Masters/Proposal Writing/image_processing.png>]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 454.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 379.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsppl.fd"
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 454.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 379.
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--466
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 466--467
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 470--472
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--476
+Underfull \hbox (badness 10000) in paragraph at lines 395--397
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--419
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--469
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 493--494
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 507--508
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 512--513
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 542--544
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 544--545
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 545--546
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 553--554
-
- []
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 574--575
-
- []
-
-<neural_network.png, id=401, 922.19531pt x 698.61pt>
+<neural_network.png, id=362, 922.19531pt x 698.61pt>
 File: neural_network.png Graphic file (type png)
  <use neural_network.png>
-Package pdftex.def Info: neural_network.png used on input line 588.
+Package pdftex.def Info: neural_network.png used on input line 513.
 (pdftex.def)             Requested size: 414.98405pt x 314.3716pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19] [20 <C:/Users/Trouble Maker/Documents/2017/Witwatersrand/Masters/Proposal 
-Writing/neural_network.png>] [21]
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 520--521
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
+
+ []
+
+[18 <C:/Users/Trouble Maker/Documents/2017/Witwatersrand/Masters/Proposal Writi
+ng/neural_network.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 539--541
+
+ []
+
+[19] [20] <second_structure.png, id=402, 672.26157pt x 451.6875pt>
+File: second_structure.png Graphic file (type png)
+
+<use second_structure.png>
+Package pdftex.def Info: second_structure.png used on input line 632.
+(pdftex.def)             Requested size: 235.29507pt x 158.09299pt.
+
+<image_processing.png, id=404, 1057.70157pt x 674.52pt>
+File: image_processing.png Graphic file (type png)
+
+<use image_processing.png>
+Package pdftex.def Info: image_processing.png used on input line 640.
+(pdftex.def)             Requested size: 317.31291pt x 202.35756pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[22]
+[21 <C:/Users/Trouble Maker/Documents/2017/Witwatersrand/Masters/Proposal Writi
+ng/second_structure.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[22 <C:/Users/Trouble Maker/Documents/2017/Witwatersrand/Masters/Proposal Writi
+ng/image_processing.png>]
 ("C:\Users\Trouble Maker\Documents\2017\Witwatersrand\Masters\Proposal Writing\
 proposal_report.bbl" [23] [24] [25])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 713.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 712.
  [26]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 713.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 712.
 
 ("C:\Users\Trouble Maker\Documents\2017\Witwatersrand\Masters\Proposal Writing\
 proposal_report.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 713.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 713.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 712.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 712.
 Package rerunfilecheck Info: File `proposal_report.out' has not changed.
-(rerunfilecheck)             Checksum: 91ED109E1F37B24F14CFDFCD5FFA1023;2284.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 713.
+(rerunfilecheck)             Checksum: 92BA459721D72DBD38A6DA4EF6092D86;1935.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 712.
  ) 
 Here is how much of TeX's memory you used:
- 11509 strings out of 493921
- 174170 string characters out of 3147257
- 300961 words of memory out of 3000000
- 14225 multiletter control sequences out of 15000+200000
- 38446 words of font info for 232 fonts, out of 3000000 for 9000
+ 11520 strings out of 493921
+ 174305 string characters out of 3147257
+ 300232 words of memory out of 3000000
+ 14228 multiletter control sequences out of 15000+200000
+ 39035 words of font info for 240 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 37i,16n,39p,1720b,587s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,16n,39p,1456b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
@@ -744,9 +750,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files
 .9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/
 uplri8a.pfb>
-Output written on proposal_report.pdf (28 pages, 658345 bytes).
+Output written on proposal_report.pdf (28 pages, 658805 bytes).
 PDF statistics:
- 527 PDF objects out of 1000 (max. 8388607)
- 147 named destinations out of 1000 (max. 500000)
- 34586 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 513 PDF objects out of 1000 (max. 8388607)
+ 143 named destinations out of 1000 (max. 500000)
+ 34546 words of extra memory for PDF output out of 35830 (max. 10000000)
 
